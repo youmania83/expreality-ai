@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { residences } from "../../data/residences";
 import { ResidenceCard } from "../../components/ResidenceCard";
 
@@ -23,18 +22,14 @@ const ResidencesPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {residences.map((residence) => (
-            <Link
+            <ResidenceCard
               key={residence.slug}
-              href={`/residences/${residence.slug}`}
-              className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0B] rounded-3xl"
-            >
-              <ResidenceCard
-                name={residence.name}
-                location={residence.location}
-                startingPrice={residence.startingPrice}
-                imageSrc={residence.image}
-              />
-            </Link>
+              slug={residence.slug}
+              name={residence.name}
+              location={residence.location}
+              startingPrice={residence.startingPrice}
+              imageSrc={residence.image}
+            />
           ))}
         </div>
       </section>
