@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-gray-500">
-              Expreality
+              Exprealty
             </p>
             <p className="mt-2 text-sm text-gray-400 max-w-sm">
               Luxury real estate intelligence for Delhi NCR&apos;s discerning
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[11px] text-gray-500">
-          <p>© {new Date().getFullYear()} Expreality. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Exprealty. All rights reserved.</p>
           <p className="text-gray-600">
             Strictly private advisory. No mass marketing. Invitation-based
             engagements only.

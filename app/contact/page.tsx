@@ -9,7 +9,7 @@ const ContactPage = () => {
             Contact
           </p>
           <h1 className="text-3xl md:text-4xl font-semibold">
-            Connect with Expreality
+            Connect with Exprealty
           </h1>
           <p className="text-sm md:text-base text-gray-300">
             Reach out to initiate a confidential conversation about your Delhi

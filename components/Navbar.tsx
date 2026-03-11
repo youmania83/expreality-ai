@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
         <Link href="/" className="flex items-center gap-2">
           <span className="h-7 w-7 rounded-full bg-[#C6A15B]" />
           <span className="text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-gray-100">
-            Expreality
+            Exprealty
           </span>
         </Link>
 

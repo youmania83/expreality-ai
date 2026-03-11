@@ -21,7 +21,7 @@ const AdvisoryPage = () => {
         <div className="rounded-3xl border border-white/5 bg-[#111111] p-6 md:p-8 text-sm text-gray-300 space-y-4">
           <p>
             This advisory section will host your intake form and explanation of
-            how Expreality works with buyers, family offices and capital
+            how Exprealty works with buyers, family offices and capital
             allocators.
           </p>
           <p className="text-xs text-gray-500">

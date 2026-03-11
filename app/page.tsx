@@ -45,19 +45,39 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Right column: image */}
-          <div className="relative h-64 md:h-80 lg:h-[420px] rounded-3xl overflow-hidden border border-white/10 bg-[#050505] shadow-[0_24px_80px_rgba(0,0,0,0.85)]">
+          {/* Right column: hero image */}
+          <div className="relative h-64 md:h-80 lg:h-[420px] rounded-3xl overflow-hidden border border-white/10 bg-[#050505] shadow-[0_24px_70px_rgba(0,0,0,0.8)] hero-image">
             <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-              alt="Luxury skyline view"
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80"
+              alt="Luxury residence with pool and palm trees"
               fill
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/40 to-transparent" />
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        .hero-image {
+          opacity: 0;
+          transform: translateY(12px);
+          animation: heroFadeIn 0.9s ease-out forwards;
+          animation-delay: 0.15s;
+        }
+
+        @keyframes heroFadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
 
       {/* Featured Projects */}
       <section className="px-6 md:px-16 lg:px-24 py-16 md:py-20 bg-gradient-to-b from-[#0B0B0B] to-black">
