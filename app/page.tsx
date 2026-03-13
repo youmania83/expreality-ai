@@ -103,12 +103,12 @@ const HomePage = () => {
             <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
               <div className="relative h-56">
                 <Image
-                  src="/globe.svg"
-                  alt="Golf course villa"
+                  src="/featured/golf-course-road.jpg"
+                  alt="Golf Course Road luxury residence"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
                   <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10">
                     Gurgaon • Golf Course Road
@@ -140,12 +140,12 @@ const HomePage = () => {
             <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
               <div className="relative h-56">
                 <Image
-                  src="/window.svg"
-                  alt="Lutyens bungalow"
+                  src="/featured/lutyens-delhi.jpg"
+                  alt="Lutyens Delhi heritage bungalow"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
                   <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10">
                     Central Delhi • Lutyens Zone
@@ -177,12 +177,12 @@ const HomePage = () => {
             <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
               <div className="relative h-56">
                 <Image
-                  src="/file.svg"
-                  alt="Farmhouse"
+                  src="/featured/chhatarpur-farmhouse.jpg"
+                  alt="Chhatarpur luxury farmhouse estate"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
                   <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10">
                     Chhatarpur • Farm Estate

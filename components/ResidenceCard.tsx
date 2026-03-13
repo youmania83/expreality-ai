@@ -21,6 +21,8 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
   imageAlt,
   slug,
 }) => {
+  const safeImageSrc = imageSrc || "/featured/default.jpg";
+
   return (
     <Link
       href={`/residences/${slug}`}
@@ -29,7 +31,7 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
       <article className="rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/70 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(0,0,0,0.95)] transition-transform duration-500 ease-out">
         <div className="relative h-56">
           <Image
-            src={imageSrc}
+            src={safeImageSrc}
             alt={imageAlt ?? name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
