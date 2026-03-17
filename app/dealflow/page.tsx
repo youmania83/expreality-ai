@@ -11,7 +11,7 @@ export default function DealflowPage() {
           </p>
   
           <a
-            href="https://gumroad.com/l/YOUR-LINK"
+            href="https://ykwizard1.gumroad.com/l/ccsxt"
             className="bg-white text-black px-6 py-3 rounded-xl font-semibold"
           >
             Get Instant Access
