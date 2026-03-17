@@ -15,6 +15,9 @@ export default function DealflowPage() {
             className="bg-white text-black px-6 py-3 rounded-xl font-semibold"
           >
             Get Instant Access
+            <p className="text-gray-500 mt-4 text-sm">
+  Instant access after payment • One-time $9 • No subscription
+</p>
           </a>
         </section>
   
