@@ -1,0 +1,32 @@
+export default function DealflowPage() {
+  return (
+    <main className="bg-black text-white min-h-screen px-6 py-16">
+      
+      <section className="max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl font-bold mb-4">
+          Get 2–5 Serious Property Buyers Every Week
+        </h1>
+        <p className="text-gray-400 mb-6">
+          No ads. No portals. Just real buyer conversations.
+        </p>
+
+        <a
+          href="https://gumroad.com/l/YOUR-LINK"
+          className="bg-white text-black px-6 py-3 rounded-xl font-semibold"
+        >
+          Get Instant Access
+        </a>
+      </section>
+
+      <section className="max-w-4xl mx-auto mt-20">
+        <h2 className="text-2xl font-semibold mb-4">What You Get</h2>
+        <ul className="text-gray-400 space-y-2">
+          <li>• Buyer sources</li>
+          <li>• DM scripts</li>
+          <li>• 7-day plan</li>
+        </ul>
+      </section>
+
+    </main>
+  );
+}
