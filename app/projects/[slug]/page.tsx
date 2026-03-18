@@ -1,7 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import { projects } from "../../../data/projects";
+import { Project } from "@/data/projects";
+import { useState, useEffect } from "react";
+import MicroMarketInsights from "@/components/MicroMarketInsights";
 
 type ProjectPageProps = {
   params: {
@@ -9,96 +8,66 @@ type ProjectPageProps = {
   };
 };
 
-const ProjectPage = ({ params }: ProjectPageProps) => {
-  const project = projects.find((p) => p.slug === params.slug);
+export default function ProjectPage({ params }: ProjectPageProps) {
+  const [project, setProject] = useState<Project | null>(null);
 
-  if (!project) {
-    return notFound();
-  }
+  useEffect(() => {
+    // Fetch project data based on the slug
+    const fetchProject = async () => {
+      const response = await fetch(`/api/projects/${params.slug}`);
+      const data = await response.json();
+      setProject(data);
+    };
+
+    fetchProject();
+  }, [params.slug]);
+
+  if (!project) return <div>Loading...</div>;
 
   return (
-    <main className="min-h-screen bg-[#0B0B0B] text-gray-200">
-      <section className="relative h-[60vh] w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0B0B0B]" />
-        </div>
-
-        <div className="relative z-10 h-full px-6 md:px-16 lg:px-24 flex items-end pb-10">
-          <div className="max-w-3xl space-y-3">
-            <p className="uppercase tracking-[0.25em] text-xs text-gray-400">
-              Luxury Residence • Delhi NCR
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
-              {project.name}
-            </h1>
-            <p className="text-sm md:text-base text-gray-300">
-              {project.location}
-            </p>
-            <p className="text-sm md:text-base text-[#C6A15B] font-semibold">
-              Starting from {project.startingPrice}
-            </p>
-          </div>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${project.imageSrc})` }}>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="container mx-auto flex items-center justify-center h-full">
+          <h1 className="text-white text-4xl font-bold">{project.projectName}</h1>
         </div>
       </section>
 
-      <section className="px-6 md:px-16 lg:px-24 py-12 md:py-16">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-xl md:text-2xl font-semibold">
-            Project Overview
-          </h2>
-          <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-            This is a flagship residence within Delhi NCR&apos;s most coveted
-            luxury corridor. Connect for a private brief to understand exact
-            availability, inventory mix, and negotiation intelligence tailored
-            to your acquisition thesis.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-sm text-gray-300">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-                Location
-              </p>
-              <p className="mt-2">{project.location}</p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-                Starting Price
-              </p>
-              <p className="mt-2">{project.startingPrice}</p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-                Category
-              </p>
-              <p className="mt-2">Ultra-luxury residential</p>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-white/5 mt-4">
-            <h3 className="text-lg md:text-xl font-semibold">
-              Request a Private Dossier
-            </h3>
-            <p className="mt-3 text-sm md:text-base text-gray-300 max-w-xl">
-              Share your brief and we will send you a bespoke dossier on{" "}
-              {project.name}, including stack plans, view corridors, and
-              transaction benchmarks that are not publicly available.
-            </p>
-            <button className="mt-6 bg-[#C6A15B] text-black px-7 py-3 rounded-full font-semibold tracking-wide hover:bg-[#C6A15B]/90 transition">
-              Request Project Brief
-            </button>
-          </div>
+      {/* Investment Highlights */}
+      <section className="bg-gray-100 py-20">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8">Investment Highlights</h2>
+          <ul className="list-disc pl-6">
+            {project.highlights.map((highlight, index) => (
+              <li key={index} className="mb-4">{highlight}</li>
+            ))}
+          </ul>
         </div>
       </section>
-    </main>
+
+      {/* Why This Project Matters */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8">Why This Project Matters</h2>
+          <p className="text-lg">{project.matter}</p>
+        </div>
+      </section>
+
+      {/* Micro Market Insights */}
+      <MicroMarketInsights
+        location={project.location}
+        priceTrend={project.priceTrend}
+        connectivity={project.connectivity}
+        futureDevelopments={project.futureDevelopments}
+      />
+
+      {/* Sticky CTA Button */}
+      <section className="bg-white py-10">
+        <div className="container mx-auto text-center">
+          <button className="bg-blue-500 text-white px-8 py-4 rounded hover:bg-blue-600">Speak to Advisor</button>
+        </div>
+      </section>
+    </div>
   );
-};
-
-export default ProjectPage;
-
+}
