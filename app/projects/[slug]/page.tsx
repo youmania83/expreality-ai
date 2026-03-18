@@ -1,37 +1,29 @@
-"use client";
-
-import { use } from "react";
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
 
-type Params = Promise<{
-  slug: string;
-}>;
+export default function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const slug = params.slug;
 
-export default function ProjectPage({ params }: { params: Params }) {
-  // ✅ unwrap params (Next.js 16 requirement)
-  const { slug } = use(params);
-
-  // ✅ find project from static data
   const project = projects.find(
     (p) => p.slug.toLowerCase() === slug.toLowerCase()
   );
 
-  // ✅ fallback if not found
   if (!project) {
     return (
       <div className="p-20 text-center text-white bg-black min-h-screen">
         <h1 className="text-3xl font-semibold">Project not found</h1>
-        <p className="text-gray-400 mt-4">
-          Slug: {slug}
-        </p>
+        <p className="text-gray-400 mt-4">Slug: {slug}</p>
       </div>
     );
   }
 
   return (
     <div className="bg-black text-white">
-      {/* 🔥 HERO SECTION */}
+      {/* HERO */}
       <section
         className="relative h-screen bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${project.image})` }}
@@ -42,26 +34,24 @@ export default function ProjectPage({ params }: { params: Params }) {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             {project.name}
           </h1>
-          <p className="text-lg text-gray-300">
-            {project.location}
-          </p>
+          <p className="text-lg text-gray-300">{project.location}</p>
           <p className="mt-2 text-xl font-medium">
             Starting from {project.startingPrice}
           </p>
         </div>
       </section>
 
-      {/* 🔥 MICRO MARKET SECTION */}
+      {/* MICRO MARKET */}
       <MicroMarketInsights
         location={project.location}
-        priceTrend="Stable growth with premium demand"
-        connectivity="Excellent connectivity to major hubs"
-        futureDevelopments="Upcoming infrastructure & metro expansion"
+        priceTrend="Stable growth"
+        connectivity="Strong connectivity"
+        futureDevelopments="Upcoming infrastructure"
       />
 
-      {/* 🔥 CTA */}
+      {/* CTA */}
       <section className="py-16 text-center">
-        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition">
+        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200">
           Speak to Advisor
         </button>
       </section>
