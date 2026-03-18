@@ -3,7 +3,11 @@
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
 
-export default function ProjectPage({ params }) {
+export default function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const project = projects.find(p => p.slug === params.slug);
 
   if (!project) {
@@ -16,9 +20,7 @@ export default function ProjectPage({ params }) {
         className="h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${project.image})` }}
       >
-        <h1 className="text-white text-4xl">
-          {project.name}
-        </h1>
+        <h1 className="text-white text-4xl">{project.name}</h1>
       </section>
 
       <MicroMarketInsights
