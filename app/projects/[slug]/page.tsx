@@ -1,9 +1,8 @@
 "use client";
 
-import { Project } from "@/data/projects";
-import { useState, useEffect } from "react";
-import MicroMarketInsights from "@/components/MicroMarketInsights";
 
+import { projects } from "@/data/projects";
+import MicroMarketInsights from "@/components/MicroMarketInsights";
 type ExtendedProject = Project & {
   highlights?: string[];
   matter?: string;
@@ -21,20 +20,7 @@ type ProjectPageProps = {
 export default function ProjectPage({ params }: ProjectPageProps) {
   const [project, setProject] = useState<ExtendedProject | null>(null);
 
-  useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        const response = await fetch(`/api/projects/${params.slug}`);
-        const data = await response.json();
-        setProject(data);
-      } catch (error) {
-        console.error("Error fetching project:", error);
-      }
-    };
-
-    fetchProject();
-  }, [params.slug]);
-
+  
   if (!project) return <div className="p-10 text-center">Loading...</div>;
 
   return (
