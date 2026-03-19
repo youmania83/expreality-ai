@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Triplex Sky Villa with Private Deck",
+    "location": "Gurgaon • Golf Course Road",
+    "price": "₹32 Cr",
+    "image": "/projects/dlf-camellias.jpg"
+  },
+  {
+    "name": "Heritage Bungalow with Sculpted Gardens",
+    "location": "Central Delhi • Lutyens Zone",
+    "price": "On Request",
+    "image": "/projects/lutyens-bungalow.jpg"
+  },
+  {
+    "name": "Contemporary Farmhouse with Courtyard Pool",
+    "location": "Chhatarpur • Farm Estate",
+    "price": "₹24 Cr",
+    "image": "/projects/farmhouse.jpg"
+  }
+]

@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "next/link";
-import { projects } from "../../data/projects";
-import { ProjectCard } from "../../components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
+import projects from "@/data/projects.json";
 
 const ProjectsPage = () => {
   return (
@@ -22,20 +21,8 @@ const ProjectsPage = () => {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Link
-              key={project.slug}
-              href={`/projects/${project.slug}`}
-              className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0B] rounded-3xl"
-            >
-              <ProjectCard
-                imageSrc={project.image}
-                imageAlt={project.name}
-                projectName={project.name}
-                location={project.location}
-                startingPrice={project.startingPrice}
-              />
-            </Link>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </section>
