@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
 
@@ -45,14 +46,23 @@ export default async function ProjectPage({
 
   return (
     <div className="bg-black text-white">
-      {/* HERO */}
-      <section
-        className="relative h-screen bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${project.image})` }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
+      {/* HERO - Using next/image for optimization */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src={project.image}
+          alt={`${project.name} - ${project.location}`}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover absolute inset-0"
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 text-center px-6">
+        {/* Content */}
+        <div className="relative z-10 text-center px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             {project.name}
           </h1>

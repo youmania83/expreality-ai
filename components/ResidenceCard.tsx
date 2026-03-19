@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,6 +13,8 @@ type ResidenceCardProps = {
   slug: string;
 };
 
+const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&q=80";
+
 export const ResidenceCard: React.FC<ResidenceCardProps> = ({
   name,
   location,
@@ -21,7 +23,13 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
   imageAlt,
   slug,
 }) => {
-  const safeImageSrc = imageSrc || "/featured/default.jpg";
+  const [imageSrc_, setImageSrc] = useState(imageSrc || "/featured/default.jpg");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageError = () => {
+    console.warn(`⚠️ Image failed to load: ${imageSrc}, using fallback`);
+    setImageSrc(DEFAULT_IMAGE);
+  };
 
   return (
     <Link
@@ -29,13 +37,21 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
       className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-3xl"
     >
       <article className="rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/70 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(0,0,0,0.95)] transition-transform duration-500 ease-out">
-        <div className="relative h-56">
+        <div className="relative h-56 bg-[#050505]">
           <Image
-            src={safeImageSrc}
+            src={imageSrc_}
             alt={imageAlt ?? name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover group-hover:scale-105 transition-transform duration-500 ${
+              isLoading ? "opacity-0" : "opacity-100"
+            }`}
+            onLoad={() => setIsLoading(false)}
+            onError={handleImageError}
           />
+          {isLoading && (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent animate-pulse" />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
             <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10 line-clamp-1">
