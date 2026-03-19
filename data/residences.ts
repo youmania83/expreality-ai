@@ -15,7 +15,7 @@ export const residences: Residence[] = [
     location: "Golf Course Road, Gurgaon",
     startingPrice: "₹35 Cr+",
     priceRange: "₹35–50 Cr",
-    image: "/residences/camellias.jpg",
+    image: "https://images.unsplash.com/photo-1512207736139-6ea0141e3e9d?w=800&q=80",
     slug: "dlf-camellias-residence",
     description:
       "Ultra-luxury high-rise residence overlooking the DLF Golf & Country Club, with expansive decks, hotel-grade services, and a tightly held primary-owner community.",
@@ -31,7 +31,7 @@ export const residences: Residence[] = [
     location: "Sector 65, Golf Course Extension Road, Gurgaon",
     startingPrice: "₹7 Cr+",
     priceRange: "₹7–15 Cr",
-    image: "/residences/m3m-golf-estate.jpg",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
     slug: "m3m-golf-estate-residence",
     description:
       "Golf-facing residences with sweeping greens, resort-style amenities, and strong rental demand from senior corporate leadership.",
@@ -47,7 +47,7 @@ export const residences: Residence[] = [
     location: "Sector 65, Golf Course Extension Road, Gurgaon",
     startingPrice: "₹6 Cr+",
     priceRange: "₹6–12 Cr",
-    image: "/residences/trump-towers.jpg",
+    image: "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&q=80",
     slug: "trump-towers-signature-residence",
     description:
       "Branded residences with double-height living spaces, curated interiors, and an international hospitality-driven service layer.",
