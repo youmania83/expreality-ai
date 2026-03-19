@@ -2,8 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const HomePage = () => {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-gray-200">
       {/* Hero Section */}
@@ -24,10 +27,16 @@ const HomePage = () => {
               Access a handpicked portfolio of penthouses, golf-course villas, and private residences across Delhi NCR, guided by private advisory rather than listings.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2 md:pt-4">
-              <button className="bg-[#C6A15B] text-black px-7 py-3 rounded-full font-semibold tracking-wide hover:bg-[#C6A15B]/90 transition">
+              <button 
+                onClick={() => router.push("/contact")}
+                className="bg-[#C6A15B] text-black px-7 py-3 rounded-full font-semibold tracking-wide hover:bg-[#C6A15B]/90 transition"
+              >
                 Request Private Briefing
               </button>
-              <button className="border border-[#C6A15B]/60 text-gray-200 px-7 py-3 rounded-full font-medium hover:bg-[#C6A15B]/10 transition">
+              <button 
+                onClick={() => router.push("/projects")}
+                className="border border-[#C6A15B]/60 text-gray-200 px-7 py-3 rounded-full font-medium hover:bg-[#C6A15B]/10 transition"
+              >
                 View Signature Collection
               </button>
             </div>
@@ -93,7 +102,10 @@ const HomePage = () => {
                 Signature Homes Across Delhi NCR
               </h2>
             </div>
-            <button className="hidden md:inline-flex text-sm border-b border-[#C6A15B]/60 text-gray-200 hover:text-[#C6A15B] hover:border-[#C6A15B] transition">
+            <button 
+              onClick={() => router.push("/projects")}
+              className="hidden md:inline-flex text-sm border-b border-[#C6A15B]/60 text-gray-200 hover:text-[#C6A15B] hover:border-[#C6A15B] transition"
+            >
               Explore full portfolio
             </button>
           </div>
@@ -106,6 +118,7 @@ const HomePage = () => {
                   src="/featured/golf-course-road.jpg"
                   alt="Golf Course Road luxury residence"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -143,6 +156,7 @@ const HomePage = () => {
                   src="/featured/lutyens-delhi.jpg"
                   alt="Lutyens Delhi heritage bungalow"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -180,6 +194,7 @@ const HomePage = () => {
                   src="/featured/chhatarpur-farmhouse.jpg"
                   alt="Chhatarpur luxury farmhouse estate"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />

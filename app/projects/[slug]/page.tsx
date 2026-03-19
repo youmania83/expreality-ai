@@ -1,14 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
 
 // Generate static params for all projects
 export async function generateStaticParams() {
-  console.log("🔨 generateStaticParams: Generating static params for projects...");
   const params = projects.map((project) => ({
     slug: project.slug,
   }));
-  console.log("✅ Generated params:", params);
   return params;
 }
 
@@ -19,17 +18,11 @@ export default async function ProjectPage({
 }) {
   const { slug } = await params;
   
-  console.log("📍 ProjectPage received slug:", slug);
-  console.log("📚 Available projects:", projects.map(p => p.slug));
-
   const project = projects.find(
     (p) => p.slug.toLowerCase() === slug.toLowerCase()
   );
 
-  console.log("🔍 Found project:", project?.name || "NOT FOUND");
-
   if (!project) {
-    console.warn(`⚠️ Project not found for slug: ${slug}`);
     return (
       <div className="p-20 text-center text-white bg-black min-h-screen">
         <h1 className="text-3xl font-semibold">Project not found</h1>
@@ -83,9 +76,12 @@ export default async function ProjectPage({
 
       {/* CTA */}
       <section className="py-16 text-center">
-        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200">
+        <Link 
+          href="/contact"
+          className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition"
+        >
           Speak to Advisor
-        </button>
+        </Link>
       </section>
     </div>
   );
