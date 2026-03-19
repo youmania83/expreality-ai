@@ -1,22 +1,44 @@
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
 
-export default function ProjectPage({
+// Generate static params for all projects
+export async function generateStaticParams() {
+  console.log("🔨 generateStaticParams: Generating static params for projects...");
+  const params = projects.map((project) => ({
+    slug: project.slug,
+  }));
+  console.log("✅ Generated params:", params);
+  return params;
+}
+
+export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug;
+  const { slug } = await params;
+  
+  console.log("📍 ProjectPage received slug:", slug);
+  console.log("📚 Available projects:", projects.map(p => p.slug));
 
   const project = projects.find(
     (p) => p.slug.toLowerCase() === slug.toLowerCase()
   );
 
+  console.log("🔍 Found project:", project?.name || "NOT FOUND");
+
   if (!project) {
+    console.warn(`⚠️ Project not found for slug: ${slug}`);
     return (
       <div className="p-20 text-center text-white bg-black min-h-screen">
         <h1 className="text-3xl font-semibold">Project not found</h1>
         <p className="text-gray-400 mt-4">Slug: {slug}</p>
+        <p className="text-gray-500 mt-2">Available slugs:</p>
+        <ul className="text-gray-500 mt-2">
+          {projects.map((p) => (
+            <li key={p.slug}>{p.slug}</li>
+          ))}
+        </ul>
       </div>
     );
   }
