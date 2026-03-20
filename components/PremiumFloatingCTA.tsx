@@ -3,14 +3,29 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function PremiumFloatingCTA({ phoneNumber = "910000000000" }) {
+export default function PremiumFloatingCTA({ phoneNumber = "918368137724" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   
-  const encodedMessage = encodeURIComponent("Hi, I’d like to discuss a luxury residence.");
+  const encodedMessage = encodeURIComponent("Hi, I’m interested in luxury properties in Gurgaon. Please assist.");
   const waHref = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  // Listen for hash changes to auto-open modal (used by Contact Page)
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === "#open-form") {
+        setIsOpen(false);
+        setIsModalOpen(true);
+        // Clear hash after opening
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    };
+    handleHashChange(); // Check on mount
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   // Close menu when modal opens
   const handleOpenModal = () => {
@@ -142,7 +157,7 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
       setStatus("success");
       
       // Construct WhatsApp redirect string based on selected options
-      const message = `Hi, I’m interested in luxury properties in ${formData.location || "Delhi NCR"}, budget ${formData.budget || "undecided"}. Looking for ${formData.purpose || "investment"}. Please assist.`;
+      const message = `Hi, I just submitted a request on Expreality for luxury properties in ${formData.location || "Gurgaon"}, budget ${formData.budget || "undecided"}. Please assist.`;
       const encodedMsg = encodeURIComponent(message);
       
       // Delay to let user see success, then gracefully redirect to whatsapp
@@ -340,7 +355,7 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
                     type="submit" 
                     className="w-full mt-4 bg-[#C6A15B] text-black rounded-xl px-6 py-4 font-semibold text-sm hover:bg-[#C6A15B]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {status === "submitting" ? "Securing Slot..." : "Complete Request"}
+                    {status === "submitting" ? "Securing Slot..." : "Request Private Consultation"}
                   </button>
                 </div>
               )}

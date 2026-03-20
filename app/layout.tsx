@@ -34,7 +34,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <PremiumFloatingCTA phoneNumber="910000000000" />
+        <PremiumFloatingCTA phoneNumber="918368137724" />
       </body>
     </html>
   );
