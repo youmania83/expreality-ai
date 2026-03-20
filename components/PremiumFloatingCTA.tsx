@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function PremiumFloatingCTA({ phoneNumber = "910000000000" }) {
@@ -11,6 +11,12 @@ export default function PremiumFloatingCTA({ phoneNumber = "910000000000" }) {
   
   const encodedMessage = encodeURIComponent("Hi, I’d like to discuss a luxury residence.");
   const waHref = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  // Close menu when modal opens
+  const handleOpenModal = () => {
+    setIsOpen(false);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -32,10 +38,7 @@ export default function PremiumFloatingCTA({ phoneNumber = "910000000000" }) {
           </Link>
 
           <button
-            onClick={() => {
-              setIsOpen(false);
-              setIsModalOpen(true);
-            }}
+            onClick={handleOpenModal}
             className="flex items-center gap-3 bg-[#0A0A0A] border border-[#C6A15B]/50 text-[#C6A15B] px-5 py-3 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:bg-[#C6A15B]/10 hover:border-[#C6A15B] hover:scale-105 transition-all font-semibold text-sm w-[200px]"
           >
             <PhoneIcon className="h-5 w-5" />
@@ -57,9 +60,9 @@ export default function PremiumFloatingCTA({ phoneNumber = "910000000000" }) {
         </button>
       </div>
 
-      {/* Lead Capture Modal */}
+      {/* Lead Capture Multi-Step Modal */}
       {isModalOpen && (
-        <LeadModal onClose={() => setIsModalOpen(false)} />
+        <LeadModal onClose={() => setIsModalOpen(false)} adminPhone={phoneNumber} />
       )}
     </>
   );
@@ -85,32 +88,84 @@ const WhatsappIcon = ({ className = "" }: { className?: string }) => (
 );
 
 // --- Modal Component ---
-function LeadModal({ onClose }: { onClose: () => void }) {
-  const [formData, setFormData] = useState({ name: "", phone: "", budget: "", location: "" });
+function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: string }) {
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({ purpose: "", budget: "", timeline: "", name: "", phone: "", location: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
+  const totalSteps = 4;
+  const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_URL || "https://formspree.io/f/mqwaanvd"; // Replace with real or dynamic Formspree URL
+
+  // Derived check for the final step to enable submit button
+  const isFinalStepValid = formData.name.trim() !== "" && formData.phone.trim() !== "";
+
+  const handleNext = () => {
+    if (step < totalSteps) setStep(step + 1);
+  };
+
+  const handleBack = () => {
+    if (step > 1) setStep(step - 1);
+  };
+
+  const handleSelection = (field: keyof typeof formData, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    // Auto advance if not on the last step (for options)
+    if (step < totalSteps) {
+      setTimeout(() => setStep(step + 1), 250);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFinalStepValid) return;
+
     setStatus("submitting");
     setErrorMsg("");
     
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const formPayload = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formPayload.append(key, value);
       });
-      const data = await res.json();
-      
-      if (!res.ok) throw new Error(data.message || "Failed to submit");
+
+      const res = await fetch(formspreeEndpoint, {
+        method: "POST",
+        body: formPayload,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!res.ok) throw new Error("Submission failed. Please try again.");
+
       setStatus("success");
-      setTimeout(() => onClose(), 3000); // Close after 3 seconds of success
+      
+      // Construct WhatsApp redirect string based on selected options
+      const message = `Hi, I’m interested in luxury properties in ${formData.location || "Delhi NCR"}, budget ${formData.budget || "undecided"}. Looking for ${formData.purpose || "investment"}. Please assist.`;
+      const encodedMsg = encodeURIComponent(message);
+      
+      // Delay to let user see success, then gracefully redirect to whatsapp
+      setTimeout(() => {
+        window.location.href = `https://wa.me/${adminPhone}?text=${encodedMsg}`;
+      }, 1500);
+
     } catch (err: any) {
-      setErrorMsg(err.message);
+      setErrorMsg(err.message || "Something went wrong.");
       setStatus("error");
     }
   };
+
+  // Close entirely on success transition
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => {
+        // Will close out modal immediately after WA navigation triggers
+        onClose();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [status, onClose]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -118,71 +173,225 @@ function LeadModal({ onClose }: { onClose: () => void }) {
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
       
       {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-md bg-[#0A0A0A] border border-white/10 rounded-3xl shadow-[0_24px_70px_rgba(0,0,0,0.8)] overflow-hidden">
-        {/* Header */}
-        <div className="p-6 md:p-8 border-b border-white/5 bg-gradient-to-b from-white/5 to-transparent">
-          <h3 className="text-2xl font-semibold text-gray-100 flex items-center justify-between">
-            Confidential Briefing
-            <button onClick={onClose} className="p-2 text-gray-500 hover:text-white transition-colors rounded-full hover:bg-white/10">
+      <div className="relative z-10 w-full max-w-md bg-[#0A0A0A] border border-white/10 rounded-3xl shadow-[0_24px_70px_rgba(0,0,0,0.8)] flex flex-col max-h-[90vh] overflow-hidden">
+        
+        {/* Header Section */}
+        <div className="p-6 md:p-8 border-b border-white/5 bg-gradient-to-b from-white/5 to-transparent flex-shrink-0">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 leading-tight pr-4">
+              Private Access to Off-Market Luxury Opportunities
+            </h3>
+            <button onClick={onClose} className="p-2 -mr-2 text-gray-500 hover:text-white transition-colors rounded-full hover:bg-white/10 self-start">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
-          </h3>
-          <p className="mt-2 text-sm text-gray-400">
-            Share your private acquisition parameters and a lead advisor will contact you discreetly.
+          </div>
+          <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+            We work with a limited number of clients each week to deliver curated investment insights across Delhi NCR.
           </p>
         </div>
 
-        {/* Body */}
-        <div className="p-6 md:p-8">
+        {/* Progress Bar (Visible outside success state) */}
+        {status !== "success" && (
+          <div className="w-full h-1 bg-white/5">
+            <div 
+              className="h-full bg-[#C6A15B] transition-all duration-500 ease-out"
+              style={{ width: `${(step / totalSteps) * 100}%` }}
+            />
+          </div>
+        )}
+
+        {/* Dynamic Body Section */}
+        <div className="p-6 md:p-8 overflow-y-auto">
           {status === "success" ? (
-            <div className="text-center py-8">
+            <div className="text-center py-6 animate-fade-in">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#C6A15B]/20 mb-4">
                 <svg className="h-8 w-8 text-[#C6A15B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h4 className="text-xl font-medium text-white mb-2">Request Received</h4>
-              <p className="text-gray-400 text-sm">Your dossier request has been securely logged. An advisor will reach out shortly.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-[#C6A15B] font-semibold mb-1">Full Name *</label>
-                <input required type="text" className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" placeholder="e.g. John Doe" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
-              </div>
+              <h4 className="text-xl font-medium text-white mb-2">Request Approved</h4>
+              <p className="text-gray-400 text-sm mb-6">Connecting you securely to our Priority WhatsApp Advisory...</p>
               
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-[#C6A15B] font-semibold mb-1">Phone Number *</label>
-                <input required type="tel" className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" placeholder="+91 90000 00000" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+              {/* Spinner connecting visually */}
+              <div className="flex justify-center space-x-2">
+                <div className="w-2 h-2 bg-[#C6A15B] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                <div className="w-2 h-2 bg-[#C6A15B] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                <div className="w-2 h-2 bg-[#C6A15B] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+              </div>
+            </div>
+            
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
+              
+              {/* Contextual Scarcity inside form */}
+              <div className="mb-6 flex items-center justify-center gap-2 px-4 py-2 bg-[#C6A15B]/10 rounded-full border border-[#C6A15B]/20 w-max mx-auto">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6A15B] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C6A15B]"></span>
+                </span>
+                <span className="text-[10px] uppercase font-semibold text-[#C6A15B] tracking-wider">
+                  Only 3 advisory slots available this week
+                </span>
               </div>
 
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-[#C6A15B] font-semibold mb-1">Target Budget</label>
-                <select className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors appearance-none" value={formData.budget} onChange={(e) => setFormData({...formData, budget: e.target.value})}>
-                  <option value="" disabled>Select a range</option>
-                  <option value="₹5 - 10 Cr">₹5 - 10 Cr</option>
-                  <option value="₹10 - 20 Cr">₹10 - 20 Cr</option>
-                  <option value="₹20 - 50 Cr">₹20 - 50 Cr</option>
-                  <option value="₹50 Cr+">₹50 Cr+</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-[#C6A15B] font-semibold mb-1">Preferred Location</label>
-                <input type="text" className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" placeholder="e.g. Golf Course Road" value={formData.location} onChange={(e) => setFormData({...formData, location: e.target.value})} />
-              </div>
-
-              {status === "error" && (
-                <p className="text-red-400 text-xs">{errorMsg}</p>
+              {/* Step 1: Purpose */}
+              {step === 1 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h4 className="text-white text-lg mb-4 font-medium text-center">Primary Objective</h4>
+                  {["Investment", "End Use"].map((opt) => (
+                    <button
+                      key={opt}
+                      type="button"
+                      onClick={() => handleSelection("purpose", opt)}
+                      className={`w-full py-4 px-6 rounded-2xl border text-sm font-medium transition-all text-left ${
+                        formData.purpose === opt 
+                          ? "bg-[#C6A15B]/10 border-[#C6A15B] text-[#C6A15B]" 
+                          : "bg-[#111] border-white/5 text-gray-300 hover:border-white/20 hover:bg-[#1a1a1a]"
+                      }`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
               )}
 
-              <button disabled={status === "submitting"} type="submit" className="w-full mt-6 bg-[#C6A15B] text-black rounded-xl px-6 py-3.5 font-semibold text-sm hover:bg-[#C6A15B]/90 transition-colors disabled:opacity-50">
-                {status === "submitting" ? "Processing..." : "Request Access"}
-              </button>
+              {/* Step 2: Budget */}
+              {step === 2 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h4 className="text-white text-lg mb-4 font-medium text-center">Anticipated Budget</h4>
+                  {["₹2–5 Cr", "₹5–10 Cr", "₹10 Cr+"].map((opt) => (
+                    <button
+                      key={opt}
+                      type="button"
+                      onClick={() => handleSelection("budget", opt)}
+                      className={`w-full py-4 px-6 rounded-2xl border text-sm font-medium transition-all text-left ${
+                        formData.budget === opt 
+                          ? "bg-[#C6A15B]/10 border-[#C6A15B] text-[#C6A15B]" 
+                          : "bg-[#111] border-white/5 text-gray-300 hover:border-white/20 hover:bg-[#1a1a1a]"
+                      }`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Step 3: Timeline */}
+              {step === 3 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h4 className="text-white text-lg mb-4 font-medium text-center">Acquisition Timeline</h4>
+                  {["Immediate", "3 Months", "6 Months"].map((opt) => (
+                    <button
+                      key={opt}
+                      type="button"
+                      onClick={() => handleSelection("timeline", opt)}
+                      className={`w-full py-4 px-6 rounded-2xl border text-sm font-medium transition-all text-left ${
+                        formData.timeline === opt 
+                          ? "bg-[#C6A15B]/10 border-[#C6A15B] text-[#C6A15B]" 
+                          : "bg-[#111] border-white/5 text-gray-300 hover:border-white/20 hover:bg-[#1a1a1a]"
+                      }`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Step 4: Contact */}
+              {step === 4 && (
+                <div className="space-y-4 animate-fade-in flex-grow">
+                  <h4 className="text-white text-lg mb-4 font-medium text-center">Final Details</h4>
+                  <div>
+                    <input 
+                      required 
+                      type="text" 
+                      placeholder="Full Name *"
+                      className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
+                      value={formData.name} 
+                      onChange={(e) => setFormData({...formData, name: e.target.value})} 
+                    />
+                  </div>
+                  <div>
+                    <input 
+                      required 
+                      type="tel" 
+                      placeholder="Phone Number *"
+                      className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
+                      value={formData.phone} 
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})} 
+                    />
+                  </div>
+                  <div>
+                    <input 
+                      type="text" 
+                      placeholder="Target Location (Optional)"
+                      className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
+                      value={formData.location} 
+                      onChange={(e) => setFormData({...formData, location: e.target.value})} 
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <p className="text-red-400 text-xs text-center">{errorMsg}</p>
+                  )}
+
+                  <button 
+                    disabled={status === "submitting" || !isFinalStepValid} 
+                    type="submit" 
+                    className="w-full mt-4 bg-[#C6A15B] text-black rounded-xl px-6 py-4 font-semibold text-sm hover:bg-[#C6A15B]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Securing Slot..." : "Complete Request"}
+                  </button>
+                </div>
+              )}
+
+              {/* Navigation Footer */}
+              <div className="mt-8 flex items-center justify-between">
+                {step > 1 ? (
+                  <button 
+                    type="button" 
+                    onClick={handleBack} 
+                    className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors font-medium flex items-center gap-1"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    Back
+                  </button>
+                ) : <div />} {/* Spacer */}
+                
+                {step < totalSteps && (
+                  <button 
+                    type="button" 
+                    onClick={handleNext} 
+                    className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors font-medium flex items-center gap-1"
+                  >
+                    Skip
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                )}
+              </div>
             </form>
           )}
         </div>
+
+        {/* Global Footer Trust Banner */}
+        <div className="p-4 bg-black/40 border-t border-white/5 flex-shrink-0">
+          <p className="text-[10px] text-center text-gray-500 tracking-wider uppercase font-medium">
+            Advisory led. No spam. Strictly confidential.
+          </p>
+        </div>
+
       </div>
+      
+      {/* Basic Keyframes for smooth transitions included in line */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}} />
     </div>
   );
 }
