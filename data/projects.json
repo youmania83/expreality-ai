@@ -19,7 +19,10 @@
         "connectivity": "Direct access to Golf Course Road and Rapid Metro.",
         "futureDevelopments": "Upcoming underpasses will further decongest the corridor."
       }
-    }
+    },
+    "developerUrl": "https://dlf.in",
+    "brochureUrl": "#",
+    "hasDedicatedPage": true
   },
   {
     "name": "M3M Golf Estate",
@@ -41,7 +44,10 @@
         "connectivity": "Seamless connectivity to Southern Peripheral Road (SPR).",
         "futureDevelopments": "Proposed metro expansion along the extension road."
       }
-    }
+    },
+    "developerUrl": "https://m3mindia.com",
+    "brochureUrl": "#",
+    "hasDedicatedPage": true
   },
   {
     "name": "Trump Towers Gurgaon",
@@ -63,7 +69,10 @@
         "connectivity": "Positioned at the nexus of Golf Course Extn. and SPR.",
         "futureDevelopments": "Integrated retail and commercial hubs nearby."
       }
-    }
+    },
+    "developerUrl": "https://tribecadevelopers.com",
+    "brochureUrl": "#",
+    "hasDedicatedPage": false
   },
   {
     "name": "DLF Magnolias",
@@ -85,7 +94,10 @@
         "connectivity": "Prime Golf Course Road frontage.",
         "futureDevelopments": "Continued macro-infrastructure upgrades in the vicinity."
       }
-    }
+    },
+    "developerUrl": "https://dlf.in",
+    "brochureUrl": "#",
+    "hasDedicatedPage": false
   },
   {
     "name": "DLF Aralias",
@@ -107,6 +119,9 @@
         "connectivity": "Seamless inner access to DLF Phase 5 ecosystem.",
         "futureDevelopments": "Established micro-market with fully realized infra."
       }
-    }
+    },
+    "developerUrl": "https://dlf.in",
+    "brochureUrl": "#",
+    "hasDedicatedPage": true
   }
 ]

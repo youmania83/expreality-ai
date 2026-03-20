@@ -23,6 +23,9 @@ export type Project = {
   developer: string;
   status: string;
   intelligence: ProjectIntelligence;
+  developerUrl?: string;
+  brochureUrl?: string;
+  hasDedicatedPage?: boolean;
 };
 
 export const projects: Project[] = projectsData as Project[];
