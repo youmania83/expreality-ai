@@ -1,46 +1,28 @@
+import projectsData from "./projects.json";
+
+export type ProjectIntelligence = {
+  appreciation: string;
+  rentalYield: string;
+  builderRating: string;
+  liquidity: string;
+  sentiment: string;
+  marketInsights: {
+    priceTrend: string;
+    connectivity: string;
+    futureDevelopments: string;
+  };
+};
+
 export type Project = {
   name: string;
   location: string;
   startingPrice: string;
+  price: string;
   image: string;
   slug: string;
+  developer: string;
+  status: string;
+  intelligence: ProjectIntelligence;
 };
 
-export const projects: Project[] = [
-  {
-    name: "DLF Camellias",
-    location: "Golf Course Road, Gurgaon",
-    startingPrice: "₹35 Cr+",
-    image: "https://images.unsplash.com/photo-1512207736139-6ea0141e3e9d?w=800&q=80",
-    slug: "dlf-camellias-gurgaon",
-  },
-  {
-    name: "M3M Golf Estate",
-    location: "Sector 65, Golf Course Extension Road, Gurgaon",
-    startingPrice: "₹6.5 Cr+",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    slug: "m3m-golf-estate-gurgaon",
-  },
-  {
-    name: "Trump Towers Gurgaon",
-    location: "Sector 65, Golf Course Extension Road, Gurgaon",
-    startingPrice: "₹5.5 Cr+",
-    image: "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&q=80",
-    slug: "trump-towers-gurgaon",
-  },
-  {
-    name: "DLF Magnolias",
-    location: "Golf Course Road, Gurgaon",
-    startingPrice: "₹25 Cr+",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-    slug: "dlf-magnolias-gurgaon",
-  },
-  {
-    name: "DLF Aralias",
-    location: "Golf Course Road, Gurgaon",
-    startingPrice: "₹18 Cr+",
-    image: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80",
-    slug: "dlf-aralias-gurgaon",
-  },
-];
-
+export const projects: Project[] = projectsData as Project[];

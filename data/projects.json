@@ -5,7 +5,21 @@
     "startingPrice": "₹35 Cr+",
     "price": "₹35 Cr+",
     "image": "https://images.unsplash.com/photo-1512207736139-6ea0141e3e9d?w=800&q=80",
-    "slug": "dlf-camellias-gurgaon"
+    "slug": "dlf-camellias-gurgaon",
+    "developer": "DLF Limited",
+    "status": "Ready to Move",
+    "intelligence": {
+      "appreciation": "+42% (3Y)",
+      "rentalYield": "3.2%",
+      "builderRating": "AAA+",
+      "liquidity": "Very High",
+      "sentiment": "Strong Buy",
+      "marketInsights": {
+        "priceTrend": "Steady appreciation with premium holding value.",
+        "connectivity": "Direct access to Golf Course Road and Rapid Metro.",
+        "futureDevelopments": "Upcoming underpasses will further decongest the corridor."
+      }
+    }
   },
   {
     "name": "M3M Golf Estate",
@@ -13,7 +27,21 @@
     "startingPrice": "₹6.5 Cr+",
     "price": "₹6.5 Cr+",
     "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    "slug": "m3m-golf-estate-gurgaon"
+    "slug": "m3m-golf-estate-gurgaon",
+    "developer": "M3M India",
+    "status": "Ready to Move",
+    "intelligence": {
+      "appreciation": "+28% (3Y)",
+      "rentalYield": "3.8%",
+      "builderRating": "AA",
+      "liquidity": "High",
+      "sentiment": "Buy",
+      "marketInsights": {
+        "priceTrend": "High demand corridor driving steady capital growth.",
+        "connectivity": "Seamless connectivity to Southern Peripheral Road (SPR).",
+        "futureDevelopments": "Proposed metro expansion along the extension road."
+      }
+    }
   },
   {
     "name": "Trump Towers Gurgaon",
@@ -21,7 +49,21 @@
     "startingPrice": "₹5.5 Cr+",
     "price": "₹5.5 Cr+",
     "image": "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&q=80",
-    "slug": "trump-towers-gurgaon"
+    "slug": "trump-towers-gurgaon",
+    "developer": "Tribeca Developers",
+    "status": "Under Construction",
+    "intelligence": {
+      "appreciation": "+35% (3Y)",
+      "rentalYield": "N/A (Under Construction)",
+      "builderRating": "AAA",
+      "liquidity": "Medium",
+      "sentiment": "Hold / Accumulate",
+      "marketInsights": {
+        "priceTrend": "Global brand equity commands a sustained premium.",
+        "connectivity": "Positioned at the nexus of Golf Course Extn. and SPR.",
+        "futureDevelopments": "Integrated retail and commercial hubs nearby."
+      }
+    }
   },
   {
     "name": "DLF Magnolias",
@@ -29,7 +71,21 @@
     "startingPrice": "₹25 Cr+",
     "price": "₹25 Cr+",
     "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-    "slug": "dlf-magnolias-gurgaon"
+    "slug": "dlf-magnolias-gurgaon",
+    "developer": "DLF Limited",
+    "status": "Ready to Move",
+    "intelligence": {
+      "appreciation": "+38% (3Y)",
+      "rentalYield": "3.5%",
+      "builderRating": "AAA+",
+      "liquidity": "High",
+      "sentiment": "Strong Hold",
+      "marketInsights": {
+        "priceTrend": "Mature asset with highly stable and defensive pricing.",
+        "connectivity": "Prime Golf Course Road frontage.",
+        "futureDevelopments": "Continued macro-infrastructure upgrades in the vicinity."
+      }
+    }
   },
   {
     "name": "DLF Aralias",
@@ -37,6 +93,20 @@
     "startingPrice": "₹18 Cr+",
     "price": "₹18 Cr+",
     "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80",
-    "slug": "dlf-aralias-gurgaon"
+    "slug": "dlf-aralias-gurgaon",
+    "developer": "DLF Limited",
+    "status": "Ready to Move",
+    "intelligence": {
+      "appreciation": "+30% (3Y)",
+      "rentalYield": "3.6%",
+      "builderRating": "AAA+",
+      "liquidity": "Very High",
+      "sentiment": "Hold",
+      "marketInsights": {
+        "priceTrend": "Benchmark development for luxury; proven capital protection.",
+        "connectivity": "Seamless inner access to DLF Phase 5 ecosystem.",
+        "futureDevelopments": "Established micro-market with fully realized infra."
+      }
+    }
   }
 ]

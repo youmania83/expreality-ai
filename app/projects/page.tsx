@@ -1,22 +1,21 @@
 import React from "react";
 import ProjectCard from "@/components/ProjectCard";
-import projects from "@/data/projects.json";
+import { projects } from "@/data/projects";
 
 const ProjectsPage = () => {
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-gray-200 px-6 md:px-16 lg:px-24 py-16 md:py-20">
       <section className="max-w-6xl mx-auto">
-        <header className="mb-10 md:mb-14">
-          <p className="uppercase tracking-[0.25em] text-xs text-gray-500">
-            Curated Portfolio
+        <header className="mb-10 md:mb-14 border-b border-white/5 pb-10">
+          <p className="uppercase tracking-[0.25em] text-xs text-[#C6A15B] font-semibold">
+            Intelligence Platform
           </p>
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold">
-            Signature Luxury Residences in Delhi NCR
+          <h1 className="mt-3 text-3xl md:text-5xl font-semibold text-gray-100 mb-6">
+            Signature Asset Data Room
           </h1>
-          <p className="mt-4 text-sm md:text-base text-gray-300 max-w-2xl">
-            A concise selection of Delhi NCR&apos;s most coveted luxury
-            developments. Explore projects in depth or request a private brief
-            tailored to your acquisition thesis.
+          <p className="text-sm md:text-base text-gray-400 max-w-2xl leading-relaxed">
+            Gain exclusive access to high-fidelity analytics, quantitative value modeling, 
+            and restricted dossier profiles of Delhi NCR's most distinguished developments.
           </p>
         </header>
 
@@ -31,4 +30,3 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
-
