@@ -2,6 +2,36 @@ import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug.toLowerCase() === slug.toLowerCase());
+
+  if (!project) {
+    return { title: "Asset Not Found | Expreality" };
+  }
+
+  return {
+    title: `${project.name} | Luxury Apartments in ${project.location} | Expreality`,
+    description: `Explore ${project.name} by ${project.developer}. Premium luxury apartments and homes in ${project.location}. Starting at ${project.startingPrice}.`,
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
+    openGraph: {
+      title: `${project.name} | Luxury Apartments in ${project.location} | Expreality`,
+      description: `Explore ${project.name} by ${project.developer}. Premium luxury apartments and homes in ${project.location}. Starting at ${project.startingPrice}.`,
+      images: [
+        {
+          url: project.image || "/projects/default.jpg",
+          width: 1200,
+          height: 630,
+          alt: project.name,
+        },
+      ],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -32,10 +62,56 @@ export default async function ProjectPage({
     );
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["RealEstateListing", "Product"],
+    "name": project.name,
+    "description": `Luxury project in ${project.location} by ${project.developer}. Starting price: ${project.startingPrice}`,
+    "image": project.image ? `https://exprealty.in${project.image}` : `https://exprealty.in/projects/default.jpg`,
+    "url": `https://exprealty.in/projects/${slug}`,
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": project.startingPrice ? project.startingPrice.replace(/[^0-9.]/g, '') || "0" : "0",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "RealEstateAgent",
+        "name": "Expreality"
+      }
+    }
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://exprealty.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://exprealty.in/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": project.name,
+        "item": `https://exprealty.in/projects/${slug}`
+      }
+    ]
+  };
+
   // Graceful handling for stubs / direct navigators
   if (project.hasDedicatedPage === false) {
     return (
       <main className="relative min-h-screen flex items-center justify-center p-4">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
         {/* Background */}
         <div className="absolute inset-0">
           <SafeImage src={project.image || "/projects/default.jpg"} alt={project.name} fill className="object-cover" />
@@ -89,6 +165,8 @@ export default async function ProjectPage({
 
   return (
     <main className="bg-[#050505] text-white min-h-screen pb-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* HERO SECTION */}
       <section className="relative h-[65vh] md:h-[80vh] w-full flex items-end pb-16 md:pb-24">
         {/* Background Image */}

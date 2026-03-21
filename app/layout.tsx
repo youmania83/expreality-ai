@@ -15,10 +15,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: 'DealFlow | Get Property Buyers Weekly',
-  description: 'Get 2–5 serious property buyers every week without ads or portals.',
-
+export const metadata: Metadata = {
+  title: 'Expreality | Ultra Luxury Homes & Apartments in Delhi NCR',
+  description: 'Expreality offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
+  metadataBase: new URL('https://exprealty.in'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Expreality | Ultra Luxury Homes & Apartments in Delhi NCR',
+    description: 'Expreality offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
+    url: 'https://exprealty.in',
+    siteName: 'Expreality',
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

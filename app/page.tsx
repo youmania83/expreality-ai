@@ -283,6 +283,30 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Authority SEO Links / Micro Markets */}
+      <section className="px-6 md:px-16 lg:px-24 py-16 bg-[#0B0B0B] border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-10 text-center">
+            <p className="uppercase tracking-[0.25em] text-xs text-gray-500 mb-2">Prime Micro-Markets</p>
+            <h2 className="text-2xl md:text-3xl font-semibold">Explore Exclusive Regions in Delhi NCR</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/rera-approved-projects-gurgaon" className="block p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-[#C6A15B]/50 transition group">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-[#C6A15B] transition">RERA Approved Projects Gurgaon</h3>
+              <p className="text-sm text-gray-400">Discover legally vetted, ultra-luxury inventory from tier-1 developers.</p>
+            </Link>
+            <Link href="/luxury-apartments-golf-course-road" className="block p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-[#C6A15B]/50 transition group">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-[#C6A15B] transition">Luxury Apartments Golf Course Road</h3>
+              <p className="text-sm text-gray-400">The most coveted address in the NCR offering world-class amenities.</p>
+            </Link>
+            <Link href="/ultra-luxury-homes-delhi-ncr" className="block p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-[#C6A15B]/50 transition group">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-[#C6A15B] transition">Ultra Luxury Homes Delhi NCR</h3>
+              <p className="text-sm text-gray-400">Masterpiece residences, penthouses, and estates curated for private clients.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Advisory CTA */}
       <section className="px-6 md:px-16 lg:px-24 py-12 border-t border-white/5 bg-black">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
