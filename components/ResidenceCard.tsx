@@ -13,7 +13,7 @@ type ResidenceCardProps = {
   slug: string;
 };
 
-const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&q=80";
+const DEFAULT_IMAGE = "/projects/default.jpg";
 
 export const ResidenceCard: React.FC<ResidenceCardProps> = ({
   name,
@@ -23,7 +23,7 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
   imageAlt,
   slug,
 }) => {
-  const [imageSrc_, setImageSrc] = useState(imageSrc || "/featured/default.jpg");
+  const [imageSrc_, setImageSrc] = useState(imageSrc || "/projects/default.jpg");
   const [isLoading, setIsLoading] = useState(true);
 
   const handleImageError = () => {
@@ -47,7 +47,11 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
               isLoading ? "opacity-0" : "opacity-100"
             }`}
             onLoad={() => setIsLoading(false)}
-            onError={handleImageError}
+            onError={(e) => {
+              e.currentTarget.srcset = "";
+              e.currentTarget.src = "/projects/default.jpg";
+              handleImageError();
+            }}
           />
           {isLoading && (
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent animate-pulse" />

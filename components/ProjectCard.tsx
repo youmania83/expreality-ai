@@ -35,12 +35,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* IMAGE */}
         <div className="relative w-full h-[280px] overflow-hidden">
           <Image
-            src={project.image || "/fallback.jpg"}
-            alt={project.name}
+            src={project.image || "/projects/default.jpg"}
+            alt={project.name || "Luxury Residence"}
             fill
             className="object-cover group-hover:scale-105 transition duration-700 ease-out"
             priority={false}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            onError={(e) => {
+              e.currentTarget.srcset = "";
+              e.currentTarget.src = "/projects/default.jpg";
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent pointer-events-none" />
         </div>
@@ -86,7 +90,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setShowModal(false)} />
           <div className="relative z-10 w-full max-w-md bg-[#0A0A0A] border border-white/10 rounded-3xl shadow-[0_24px_70px_rgba(0,0,0,0.8)] overflow-hidden animate-fade-in">
             <div className="relative h-48 w-full">
-               <Image src={project.image || "/fallback.jpg"} alt={project.name} fill className="object-cover" />
+               <Image src={project.image || "/projects/default.jpg"} alt={project.name || "Luxury Residence"} fill className="object-cover" onError={(e) => { e.currentTarget.srcset = ""; e.currentTarget.src = "/projects/default.jpg"; }} />
                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
             </div>

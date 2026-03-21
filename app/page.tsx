@@ -59,11 +59,15 @@ const HomePage = () => {
           {/* Right column: hero image */}
           <div className="relative h-64 md:h-80 lg:h-[420px] rounded-3xl overflow-hidden border border-white/10 bg-[#050505] shadow-[0_24px_70px_rgba(0,0,0,0.8)] hero-image">
             <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80"
+              src="/projects/m3m-golf-estate-gurgaon.jpg"
               alt="Luxury residence with pool and palm trees"
               fill
               priority
               className="object-cover"
+              onError={(e) => {
+                e.currentTarget.srcset = "";
+                e.currentTarget.src = "/projects/default.jpg";
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/40 to-transparent" />
           </div>
@@ -115,11 +119,15 @@ const HomePage = () => {
             <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
               <div className="relative h-56">
                 <Image
-                  src="/featured/golf-course-road.jpg"
+                  src="/projects/golf-course-road.jpg"
                   alt="Golf Course Road luxury residence"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.srcset = "";
+                    e.currentTarget.src = "/projects/default.jpg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
@@ -153,11 +161,15 @@ const HomePage = () => {
             <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
               <div className="relative h-56">
                 <Image
-                  src="/featured/lutyens-delhi.jpg"
+                  src="/projects/lutyens-bungalow.jpg"
                   alt="Lutyens Delhi heritage bungalow"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.srcset = "";
+                    e.currentTarget.src = "/projects/default.jpg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
@@ -191,11 +203,15 @@ const HomePage = () => {
             <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
               <div className="relative h-56">
                 <Image
-                  src="/featured/chhatarpur-farmhouse.jpg"
+                  src="/projects/farmhouse.jpg"
                   alt="Chhatarpur luxury farmhouse estate"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.srcset = "";
+                    e.currentTarget.src = "/projects/default.jpg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">

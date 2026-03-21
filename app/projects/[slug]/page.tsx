@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
@@ -38,13 +38,13 @@ export default async function ProjectPage({
       <main className="relative min-h-screen flex items-center justify-center p-4">
         {/* Background */}
         <div className="absolute inset-0">
-          <Image src={project.image || "/fallback.jpg"} alt={project.name} fill className="object-cover" />
+          <SafeImage src={project.image || "/projects/default.jpg"} alt={project.name} fill className="object-cover" />
           <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
         </div>
         
         <div className="relative z-10 w-full max-w-lg bg-[#0A0A0A]/80 border border-white/10 rounded-3xl shadow-[0_24px_70px_rgba(0,0,0,0.8)] overflow-hidden animate-fade-in">
           <div className="relative h-48 w-full">
-            <Image src={project.image || "/fallback.jpg"} alt={project.name} fill className="object-cover" />
+            <SafeImage src={project.image || "/projects/default.jpg"} alt={project.name} fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
           </div>
           
@@ -93,8 +93,8 @@ export default async function ProjectPage({
       <section className="relative h-[65vh] md:h-[80vh] w-full flex items-end pb-16 md:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image
-            src={project.image}
+          <SafeImage
+            src={project.image || "/projects/default.jpg"}
             alt={`${project.name} - ${project.location}`}
             fill
             priority
