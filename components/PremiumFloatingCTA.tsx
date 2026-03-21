@@ -9,7 +9,7 @@ export default function PremiumFloatingCTA({ phoneNumber = "918368137724" }) {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   
-  const encodedMessage = encodeURIComponent("Hi, I’m interested in luxury properties in Gurgaon. Please assist.");
+  const encodedMessage = encodeURIComponent("Hi, I’m interested in luxury properties in Delhi NCR. Please assist.");
   const waHref = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   // Listen for hash changes to auto-open modal (used by Contact Page)
@@ -75,7 +75,7 @@ export default function PremiumFloatingCTA({ phoneNumber = "918368137724" }) {
         </button>
       </div>
 
-      {/* Lead Capture Multi-Step Modal */}
+      {/* Lead Capture Modal */}
       {isModalOpen && (
         <LeadModal onClose={() => setIsModalOpen(false)} adminPhone={phoneNumber} />
       )}
@@ -104,36 +104,17 @@ const WhatsappIcon = ({ className = "" }: { className?: string }) => (
 
 // --- Modal Component ---
 function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: string }) {
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({ purpose: "", budget: "", timeline: "", name: "", phone: "", location: "" });
+  const [formData, setFormData] = useState({ purpose: "", name: "", phone: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const totalSteps = 4;
-  const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_URL || "https://formspree.io/f/mqwaanvd"; // Replace with real or dynamic Formspree URL
+  const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_URL || "https://formspree.io/f/mqwaanvd"; 
 
-  // Derived check for the final step to enable submit button
-  const isFinalStepValid = formData.name.trim() !== "" && formData.phone.trim() !== "";
-
-  const handleNext = () => {
-    if (step < totalSteps) setStep(step + 1);
-  };
-
-  const handleBack = () => {
-    if (step > 1) setStep(step - 1);
-  };
-
-  const handleSelection = (field: keyof typeof formData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-    // Auto advance if not on the last step (for options)
-    if (step < totalSteps) {
-      setTimeout(() => setStep(step + 1), 250);
-    }
-  };
+  const isFormValid = formData.name.trim() !== "" && formData.phone.trim() !== "";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isFinalStepValid) return;
+    if (!isFormValid) return;
 
     setStatus("submitting");
     setErrorMsg("");
@@ -147,20 +128,16 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
       const res = await fetch(formspreeEndpoint, {
         method: "POST",
         body: formPayload,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       if (!res.ok) throw new Error("Submission failed. Please try again.");
 
       setStatus("success");
       
-      // Construct WhatsApp redirect string based on selected options
-      const message = `Hi, I just submitted a request on Expreality for luxury properties in ${formData.location || "Gurgaon"}, budget ${formData.budget || "undecided"}. Please assist.`;
+      const message = `Hi, I just submitted a request on Exprealty for luxury properties. Name: ${formData.name}. Interest: ${formData.purpose || "undecided"}.`;
       const encodedMsg = encodeURIComponent(message);
       
-      // Delay to let user see success, then gracefully redirect to whatsapp
       setTimeout(() => {
         window.location.href = `https://wa.me/${adminPhone}?text=${encodedMsg}`;
       }, 1500);
@@ -171,11 +148,9 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
     }
   };
 
-  // Close entirely on success transition
   useEffect(() => {
     if (status === "success") {
       const timer = setTimeout(() => {
-        // Will close out modal immediately after WA navigation triggers
         onClose();
       }, 3000);
       return () => clearTimeout(timer);
@@ -194,26 +169,16 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
         <div className="p-6 md:p-8 border-b border-white/5 bg-gradient-to-b from-white/5 to-transparent flex-shrink-0">
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-xl md:text-2xl font-semibold text-gray-100 leading-tight pr-4">
-              Private Access to Off-Market Luxury Opportunities
+              Access Off-Market Inventory
             </h3>
             <button onClick={onClose} className="p-2 -mr-2 text-gray-500 hover:text-white transition-colors rounded-full hover:bg-white/10 self-start">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
           </div>
           <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-            We work with a limited number of clients each week to deliver curated investment insights across Delhi NCR.
+            Speak directly with our senior partners for curated property dossiers and exclusive walkthroughs in Delhi NCR.
           </p>
         </div>
-
-        {/* Progress Bar (Visible outside success state) */}
-        {status !== "success" && (
-          <div className="w-full h-1 bg-white/5">
-            <div 
-              className="h-full bg-[#C6A15B] transition-all duration-500 ease-out"
-              style={{ width: `${(step / totalSteps) * 100}%` }}
-            />
-          </div>
-        )}
 
         {/* Dynamic Body Section */}
         <div className="p-6 md:p-8 overflow-y-auto">
@@ -227,18 +192,14 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
               <h4 className="text-xl font-medium text-white mb-2">Request Approved</h4>
               <p className="text-gray-400 text-sm mb-6">Connecting you securely to our Priority WhatsApp Advisory...</p>
               
-              {/* Spinner connecting visually */}
               <div className="flex justify-center space-x-2">
                 <div className="w-2 h-2 bg-[#C6A15B] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                 <div className="w-2 h-2 bg-[#C6A15B] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
                 <div className="w-2 h-2 bg-[#C6A15B] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
-            
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-              
-              {/* Contextual Scarcity inside form */}
+            <form onSubmit={handleSubmit} className="flex flex-col flex-grow animate-fade-in">
               <div className="mb-6 flex items-center justify-center gap-2 px-4 py-2 bg-[#C6A15B]/10 rounded-full border border-[#C6A15B]/20 w-max mx-auto">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6A15B] opacity-75"></span>
@@ -249,140 +210,48 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
                 </span>
               </div>
 
-              {/* Step 1: Purpose */}
-              {step === 1 && (
-                <div className="space-y-3 animate-fade-in">
-                  <h4 className="text-white text-lg mb-4 font-medium text-center">Primary Objective</h4>
-                  {["Investment", "End Use"].map((opt) => (
-                    <button
-                      key={opt}
-                      type="button"
-                      onClick={() => handleSelection("purpose", opt)}
-                      className={`w-full py-4 px-6 rounded-2xl border text-sm font-medium transition-all text-left ${
-                        formData.purpose === opt 
-                          ? "bg-[#C6A15B]/10 border-[#C6A15B] text-[#C6A15B]" 
-                          : "bg-[#111] border-white/5 text-gray-300 hover:border-white/20 hover:bg-[#1a1a1a]"
-                      }`}
-                    >
-                      {opt}
-                    </button>
-                  ))}
+              <div className="space-y-4">
+                <div>
+                  <input 
+                    required 
+                    type="text" 
+                    placeholder="Full Name *"
+                    className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
+                    value={formData.name} 
+                    onChange={(e) => setFormData({...formData, name: e.target.value})} 
+                  />
                 </div>
-              )}
-
-              {/* Step 2: Budget */}
-              {step === 2 && (
-                <div className="space-y-3 animate-fade-in">
-                  <h4 className="text-white text-lg mb-4 font-medium text-center">Anticipated Budget</h4>
-                  {["₹2–5 Cr", "₹5–10 Cr", "₹10 Cr+"].map((opt) => (
-                    <button
-                      key={opt}
-                      type="button"
-                      onClick={() => handleSelection("budget", opt)}
-                      className={`w-full py-4 px-6 rounded-2xl border text-sm font-medium transition-all text-left ${
-                        formData.budget === opt 
-                          ? "bg-[#C6A15B]/10 border-[#C6A15B] text-[#C6A15B]" 
-                          : "bg-[#111] border-white/5 text-gray-300 hover:border-white/20 hover:bg-[#1a1a1a]"
-                      }`}
-                    >
-                      {opt}
-                    </button>
-                  ))}
+                <div>
+                  <input 
+                    required 
+                    type="tel" 
+                    placeholder="WhatsApp Number *"
+                    className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
+                    value={formData.phone} 
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})} 
+                  />
                 </div>
-              )}
-
-              {/* Step 3: Timeline */}
-              {step === 3 && (
-                <div className="space-y-3 animate-fade-in">
-                  <h4 className="text-white text-lg mb-4 font-medium text-center">Acquisition Timeline</h4>
-                  {["Immediate", "3 Months", "6 Months"].map((opt) => (
-                    <button
-                      key={opt}
-                      type="button"
-                      onClick={() => handleSelection("timeline", opt)}
-                      className={`w-full py-4 px-6 rounded-2xl border text-sm font-medium transition-all text-left ${
-                        formData.timeline === opt 
-                          ? "bg-[#C6A15B]/10 border-[#C6A15B] text-[#C6A15B]" 
-                          : "bg-[#111] border-white/5 text-gray-300 hover:border-white/20 hover:bg-[#1a1a1a]"
-                      }`}
-                    >
-                      {opt}
-                    </button>
-                  ))}
+                <div>
+                  <textarea 
+                    placeholder="Area of Interest (e.g. Golf Course Road, Investment)"
+                    rows={3}
+                    className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors resize-none" 
+                    value={formData.purpose} 
+                    onChange={(e) => setFormData({...formData, purpose: e.target.value})} 
+                  />
                 </div>
-              )}
 
-              {/* Step 4: Contact */}
-              {step === 4 && (
-                <div className="space-y-4 animate-fade-in flex-grow">
-                  <h4 className="text-white text-lg mb-4 font-medium text-center">Final Details</h4>
-                  <div>
-                    <input 
-                      required 
-                      type="text" 
-                      placeholder="Full Name *"
-                      className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
-                      value={formData.name} 
-                      onChange={(e) => setFormData({...formData, name: e.target.value})} 
-                    />
-                  </div>
-                  <div>
-                    <input 
-                      required 
-                      type="tel" 
-                      placeholder="Phone Number *"
-                      className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
-                      value={formData.phone} 
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})} 
-                    />
-                  </div>
-                  <div>
-                    <input 
-                      type="text" 
-                      placeholder="Target Location (Optional)"
-                      className="w-full bg-[#111] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors" 
-                      value={formData.location} 
-                      onChange={(e) => setFormData({...formData, location: e.target.value})} 
-                    />
-                  </div>
-
-                  {status === "error" && (
-                    <p className="text-red-400 text-xs text-center">{errorMsg}</p>
-                  )}
-
-                  <button 
-                    disabled={status === "submitting" || !isFinalStepValid} 
-                    type="submit" 
-                    className="w-full mt-4 bg-[#C6A15B] text-black rounded-xl px-6 py-4 font-semibold text-sm hover:bg-[#C6A15B]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {status === "submitting" ? "Securing Slot..." : "Request Private Consultation"}
-                  </button>
-                </div>
-              )}
-
-              {/* Navigation Footer */}
-              <div className="mt-8 flex items-center justify-between">
-                {step > 1 ? (
-                  <button 
-                    type="button" 
-                    onClick={handleBack} 
-                    className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors font-medium flex items-center gap-1"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
-                    Back
-                  </button>
-                ) : <div />} {/* Spacer */}
-                
-                {step < totalSteps && (
-                  <button 
-                    type="button" 
-                    onClick={handleNext} 
-                    className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors font-medium flex items-center gap-1"
-                  >
-                    Skip
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </button>
+                {status === "error" && (
+                  <p className="text-red-400 text-xs text-center">{errorMsg}</p>
                 )}
+
+                <button 
+                  disabled={status === "submitting" || !isFormValid} 
+                  type="submit" 
+                  className="w-full mt-2 bg-[#C6A15B] text-black rounded-xl px-6 py-4 font-semibold text-sm hover:bg-[#C6A15B]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
+                >
+                  {status === "submitting" ? "Securing Slot..." : "Request Private Advisory"}
+                </button>
               </div>
             </form>
           )}
@@ -397,7 +266,7 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
 
       </div>
       
-      {/* Basic Keyframes for smooth transitions included in line */}
+      {/* Basic Keyframes for smooth transitions */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(8px); }
