@@ -9,17 +9,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = projects.find((p) => p.slug.toLowerCase() === slug.toLowerCase());
 
   if (!project) {
-    return { title: "Asset Not Found | Expreality" };
+    return { title: "Asset Not Found | Exprealty" };
   }
 
   return {
-    title: `${project.name} | Luxury Apartments in ${project.location} | Expreality`,
+    title: `${project.name} | Luxury Apartments in ${project.location} | Exprealty`,
     description: `Explore ${project.name} by ${project.developer}. Premium luxury apartments and homes in ${project.location}. Starting at ${project.startingPrice}.`,
     alternates: {
       canonical: `/projects/${slug}`,
     },
     openGraph: {
-      title: `${project.name} | Luxury Apartments in ${project.location} | Expreality`,
+      title: `${project.name} | Luxury Apartments in ${project.location} | Exprealty`,
       description: `Explore ${project.name} by ${project.developer}. Premium luxury apartments and homes in ${project.location}. Starting at ${project.startingPrice}.`,
       images: [
         {
@@ -76,7 +76,7 @@ export default async function ProjectPage({
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "RealEstateAgent",
-        "name": "Expreality"
+        "name": "Exprealty"
       }
     }
   };

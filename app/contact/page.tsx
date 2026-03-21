@@ -37,10 +37,10 @@ const ContactPage = () => {
           <p>
             Email:{" "}
             <a
-              href="mailto:advisory@expreality.ai"
+              href="mailto:advisory@exprealty.in"
               className="text-gray-200 hover:text-[#C6A15B]"
             >
-              advisory@expreality.ai
+              advisory@exprealty.in
             </a>
           </p>
           <p>Location: Delhi NCR</p>

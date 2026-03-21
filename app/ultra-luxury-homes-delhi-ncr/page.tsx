@@ -37,7 +37,7 @@ export default function UltraLuxuryHomesDelhiNcr() {
 
         <h2 className="text-2xl font-semibold mb-4 text-[#C6A15B]">Bespoke Client Advisory</h2>
         <p className="text-gray-300 mb-12 leading-relaxed">
-          Expreality offers a white-glove service designed specifically for securing these masterpiece assets. Whether sourcing multi-level penthouses with private helipads or sprawling bespoke bungalows, our private client advisory manages every detail. Discover a selection of the NCRs finest structural masterpieces below.
+          Exprealty offers a white-glove service designed specifically for securing these masterpiece assets. Whether sourcing multi-level penthouses with private helipads or sprawling bespoke bungalows, our private client advisory manages every detail. Discover a selection of the NCRs finest structural masterpieces below.
         </p>
       </div>
 

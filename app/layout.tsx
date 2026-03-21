@@ -16,17 +16,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Expreality | Ultra Luxury Homes & Apartments in Delhi NCR',
-  description: 'Expreality offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
+  title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR',
+  description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
   metadataBase: new URL('https://exprealty.in'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Expreality | Ultra Luxury Homes & Apartments in Delhi NCR',
-    description: 'Expreality offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
+    title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR',
+    description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
     url: 'https://exprealty.in',
-    siteName: 'Expreality',
+    siteName: 'Exprealty',
     locale: 'en_IN',
     type: 'website',
   },

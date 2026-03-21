@@ -25,12 +25,12 @@ const AdvisoryPage = () => {
             allocators.
           </p>
           <p className="text-xs text-gray-500">
-            For now, please use the contact page or email{" "}
+            For now, please email{" "}
             <a
-              href="mailto:advisory@expreality.ai"
-              className="text-gray-300 hover:text-[#C6A15B]"
+              href="mailto:advisory@exprealty.in"
+              className="text-[#C6A15B] hover:text-white transition"
             >
-              advisory@expreality.ai
+              advisory@exprealty.in
             </a>{" "}
             to share your brief.
           </p>
