@@ -16,9 +16,12 @@ export type ProjectIntelligence = {
 export type Project = {
   name: string;
   location: string;
+  city: string;
+  country: string;
   startingPrice: string;
   price: string;
   image: string;
+  sourceUrl?: string; // Original scraping/reference link
   slug: string;
   developer: string;
   status: string;

@@ -2,8 +2,8 @@
   {
     "name": "DLF Camellias",
     "location": "Golf Course Road, Gurgaon",
-    "startingPrice": "\u20b935 Cr+",
-    "price": "\u20b935 Cr+",
+    "startingPrice": "₹35 Cr+",
+    "price": "₹35 Cr+",
     "image": "/projects/default.jpg",
     "slug": "dlf-camellias-gurgaon",
     "developer": "DLF Limited",
@@ -22,13 +22,16 @@
     },
     "developerUrl": "https://dlf.in",
     "brochureUrl": "#",
-    "hasDedicatedPage": true
+    "hasDedicatedPage": true,
+    "city": "Gurgaon",
+    "country": "India",
+    "sourceUrl": "https://dlf.in"
   },
   {
     "name": "M3M Golf Estate",
     "location": "Sector 65, Golf Course Extension Road, Gurgaon",
-    "startingPrice": "\u20b96.5 Cr+",
-    "price": "\u20b96.5 Cr+",
+    "startingPrice": "₹6.5 Cr+",
+    "price": "₹6.5 Cr+",
     "image": "/projects/m3m-golf-estate-gurgaon.jpg",
     "slug": "m3m-golf-estate-gurgaon",
     "developer": "M3M India",
@@ -47,13 +50,16 @@
     },
     "developerUrl": "https://m3mindia.com",
     "brochureUrl": "#",
-    "hasDedicatedPage": true
+    "hasDedicatedPage": true,
+    "city": "Gurgaon",
+    "country": "India",
+    "sourceUrl": "https://m3mindia.com"
   },
   {
     "name": "Trump Towers Gurgaon",
     "location": "Sector 65, Golf Course Extension Road, Gurgaon",
-    "startingPrice": "\u20b95.5 Cr+",
-    "price": "\u20b95.5 Cr+",
+    "startingPrice": "₹5.5 Cr+",
+    "price": "₹5.5 Cr+",
     "image": "/projects/trump-towers-gurgaon.jpg",
     "slug": "trump-towers-gurgaon",
     "developer": "Tribeca Developers",
@@ -72,13 +78,16 @@
     },
     "developerUrl": "https://tribecadevelopers.com",
     "brochureUrl": "#",
-    "hasDedicatedPage": false
+    "hasDedicatedPage": false,
+    "city": "Gurgaon",
+    "country": "India",
+    "sourceUrl": "https://tribecadevelopers.com"
   },
   {
     "name": "DLF Magnolias",
     "location": "Golf Course Road, Gurgaon",
-    "startingPrice": "\u20b925 Cr+",
-    "price": "\u20b925 Cr+",
+    "startingPrice": "₹25 Cr+",
+    "price": "₹25 Cr+",
     "image": "/projects/dlf-magnolias-gurgaon.jpg",
     "slug": "dlf-magnolias-gurgaon",
     "developer": "DLF Limited",
@@ -97,13 +106,16 @@
     },
     "developerUrl": "https://dlf.in",
     "brochureUrl": "#",
-    "hasDedicatedPage": false
+    "hasDedicatedPage": false,
+    "city": "Gurgaon",
+    "country": "India",
+    "sourceUrl": "https://dlf.in"
   },
   {
     "name": "DLF Aralias",
     "location": "Golf Course Road, Gurgaon",
-    "startingPrice": "\u20b918 Cr+",
-    "price": "\u20b918 Cr+",
+    "startingPrice": "₹18 Cr+",
+    "price": "₹18 Cr+",
     "image": "/projects/dlf-aralias-gurgaon.jpg",
     "slug": "dlf-aralias-gurgaon",
     "developer": "DLF Limited",
@@ -122,6 +134,9 @@
     },
     "developerUrl": "https://dlf.in",
     "brochureUrl": "#",
-    "hasDedicatedPage": true
+    "hasDedicatedPage": true,
+    "city": "Gurgaon",
+    "country": "India",
+    "sourceUrl": "https://dlf.in"
   }
 ]
