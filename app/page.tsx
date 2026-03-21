@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ResidenceCard } from '@/components/ResidenceCard';
+import { projects } from '@/data/projects';
 
 const HomePage = () => {
   const router = useRouter();
@@ -115,131 +117,16 @@ const HomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
-              <div className="relative h-56">
-                <Image
-                  src="/projects/golf-course-road.jpg"
-                  alt="Golf Course Road luxury residence"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.srcset = "";
-                    e.currentTarget.src = "/projects/default.jpg";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
-                  <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10">
-                    Gurgaon • Golf Course Road
-                  </span>
-                  <span className="text-[#C6A15B] font-semibold">
-                    ₹32 Cr
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 space-y-3">
-                <h3 className="text-lg md:text-xl font-semibold">
-                  Triplex Sky Villa with Private Deck
-                </h3>
-                <p className="text-sm text-gray-400">
-                  9,500 sq.ft. | 5 ensuite bedrooms | panoramic city and golf-course views from every level.
-                </p>
-                <div className="flex flex-wrap gap-3 text-xs text-gray-400 pt-2">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    Private elevator
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    Sky deck pool
-                  </span>
-                </div>
-              </div>
-            </article>
-
-            {/* Card 2 */}
-            <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
-              <div className="relative h-56">
-                <Image
-                  src="/projects/lutyens-bungalow.jpg"
-                  alt="Lutyens Delhi heritage bungalow"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.srcset = "";
-                    e.currentTarget.src = "/projects/default.jpg";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
-                  <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10">
-                    Central Delhi • Lutyens Zone
-                  </span>
-                  <span className="text-[#C6A15B] font-semibold">
-                    On Request
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 space-y-3">
-                <h3 className="text-lg md:text-xl font-semibold">
-                  Heritage Bungalow with Sculpted Gardens
-                </h3>
-                <p className="text-sm text-gray-400">
-                  1+ acre land parcel with curated landscape, private pavilion, and embassy-grade security envelope.
-                </p>
-                <div className="flex flex-wrap gap-3 text-xs text-gray-400 pt-2">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    Private drive-in
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    Embassy belt
-                  </span>
-                </div>
-              </div>
-            </article>
-
-            {/* Card 3 */}
-            <article className="group rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/60 transition">
-              <div className="relative h-56">
-                <Image
-                  src="/projects/farmhouse.jpg"
-                  alt="Chhatarpur luxury farmhouse estate"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.srcset = "";
-                    e.currentTarget.src = "/projects/default.jpg";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-300">
-                  <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10">
-                    Chhatarpur • Farm Estate
-                  </span>
-                  <span className="text-[#C6A15B] font-semibold">
-                    ₹24 Cr
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 space-y-3">
-                <h3 className="text-lg md:text-xl font-semibold">
-                  Contemporary Farmhouse with Courtyard Pool
-                </h3>
-                <p className="text-sm text-gray-400">
-                  2.5 acre estate with resort-style pool court, double-height living and full-service staff quarters.
-                </p>
-                <div className="flex flex-wrap gap-3 text-xs text-gray-400 pt-2">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    Managed estate
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    Turnkey interiors
-                  </span>
-                </div>
-              </div>
-            </article>
+            {projects.slice(0, 3).map((project) => (
+              <ResidenceCard
+                key={project.slug}
+                slug={project.slug}
+                name={project.name}
+                location={project.location}
+                startingPrice={project.startingPrice}
+                imageSrc={project.image || "/projects/default.jpg"}
+              />
+            ))}
           </div>
 
           {/* Credibility / Trust metrics */}

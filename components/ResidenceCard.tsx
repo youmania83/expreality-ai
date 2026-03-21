@@ -33,11 +33,11 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
 
   return (
     <Link
-      href={`/residences/${slug}`}
+      href={`/projects/${slug}`}
       className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-3xl"
     >
-      <article className="rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/70 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(0,0,0,0.95)] transition-transform duration-500 ease-out">
-        <div className="relative h-56 bg-[#050505]">
+      <article className="rounded-3xl bg-[#111111] overflow-hidden border border-white/5 hover:border-[#C6A15B]/70 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(0,0,0,0.95)] transition-transform duration-500 ease-out h-full flex flex-col">
+        <div className="relative h-56 bg-[#050505] shrink-0">
           <Image
             src={imageSrc_}
             alt={imageAlt ?? name}
@@ -66,19 +66,20 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
             </span>
           </div>
         </div>
-        <div className="px-6 pt-5 pb-6 md:px-7 md:pt-6 md:pb-7 lg:px-8 lg:pt-7 lg:pb-8 space-y-4">
-          <div>
-            <h3 className="text-lg md:text-xl font-semibold tracking-wide">
+        <div className="px-6 pt-5 pb-6 flex flex-col flex-grow">
+          <div className="mb-auto">
+            <h3 className="text-lg md:text-xl font-semibold tracking-wide group-hover:text-[#C6A15B] transition-colors">
               {name}
             </h3>
             <p className="mt-1 text-xs uppercase tracking-[0.2em] text-gray-500">
               Luxury Residence • Delhi NCR
             </p>
           </div>
-          <div className="h-px w-full bg-gradient-to-r from-[#C6A15B]/60 via-[#C6A15B] to-transparent opacity-80" />
+          <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+            <span className="text-sm font-semibold text-white group-hover:text-[#C6A15B] transition-colors">View Profile &rarr;</span>
+          </div>
         </div>
       </article>
     </Link>
   );
 };
-
