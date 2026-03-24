@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import SafeImage from '@/components/SafeImage';
-import { projects } from '@/data/projects';
+import { getProjects } from '@/lib/projects';
 
 export const metadata: Metadata = {
   title: 'Ultra Luxury Homes Delhi NCR | Elite Real Estate Advisory',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function UltraLuxuryHomesDelhiNcr() {
   // Let's feature the top or most premium projects. E.g., taking the first 6 as premium curated
-  const ncrProjects = projects.slice(0, 6);
+  const ncrProjects = getProjects().slice(0, 6);
 
   return (
     <main className="bg-[#050505] text-white min-h-screen pt-24 pb-20 px-6 md:px-16 lg:px-24">

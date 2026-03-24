@@ -1,11 +1,13 @@
 import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/lib/projects";
 import MicroMarketInsights from "@/components/MicroMarketInsights";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const projects = getProjects();
   const project = projects.find((p) => p.slug.toLowerCase() === slug.toLowerCase());
 
   if (!project) {
@@ -34,6 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export async function generateStaticParams() {
+  const projects = getProjects();
   return projects.map((project) => ({
     slug: project.slug,
   }));
@@ -45,21 +48,14 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const projects = getProjects();
   
   const project = projects.find(
     (p) => p.slug.toLowerCase() === slug.toLowerCase()
   );
 
   if (!project) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-6">
-        <h1 className="text-3xl font-semibold text-[#C6A15B] mb-2">Asset Not Found</h1>
-        <p className="text-gray-400">The requested property profile ({slug}) is not available.</p>
-        <Link href="/projects" className="mt-8 px-6 py-2 border border-[#C6A15B]/50 hover:bg-[#C6A15B]/10 rounded-full transition text-sm">
-          Return to Portfolio
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   const jsonLd = {

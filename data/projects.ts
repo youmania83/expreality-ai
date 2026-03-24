@@ -31,4 +31,4 @@ export type Project = {
   hasDedicatedPage?: boolean;
 };
 
-export const projects: Project[] = projectsData as Project[];
+export const projects: any[] = projectsData as any[];

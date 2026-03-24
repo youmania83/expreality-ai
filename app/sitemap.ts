@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { projects } from '@/data/projects'
+import { getProjects } from '@/lib/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://exprealty.in';
@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Dynamic Project Pages
+  const projects = getProjects();
   const projectRoutes = projects.map((project) => ({
     url: `${baseUrl}/projects/${project.slug}`,
     lastModified: new Date().toISOString(),

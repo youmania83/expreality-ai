@@ -1,8 +1,9 @@
 import React from "react";
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/lib/projects";
 
 const ProjectsPage = () => {
+  const projects = getProjects();
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-gray-200 px-6 md:px-16 lg:px-24 py-16 md:py-20">
       <section className="max-w-6xl mx-auto">

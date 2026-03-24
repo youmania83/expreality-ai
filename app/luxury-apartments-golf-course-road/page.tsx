@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import SafeImage from '@/components/SafeImage';
-import { projects } from '@/data/projects';
+import { getProjects } from '@/lib/projects';
 
 export const metadata: Metadata = {
   title: 'Luxury Apartments in Golf Course Road | Exclusive Real Estate',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function LuxuryApartmentsGolfCourseRoad() {
-  const gcrProjects = projects.filter(p => p.location.toLowerCase().includes('golf course'));
+  const gcrProjects = getProjects().filter(p => p.location.toLowerCase().includes('golf course'));
 
   return (
     <main className="bg-[#050505] text-white min-h-screen pt-24 pb-20 px-6 md:px-16 lg:px-24">

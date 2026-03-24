@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import SafeImage from '@/components/SafeImage';
-import { projects } from '@/data/projects';
+import { getProjects } from '@/lib/projects';
 
 export const metadata: Metadata = {
   title: 'RERA Approved Projects Gurgaon | Secure Luxury Real Estate',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function ReraApprovedProjectsGurgaon() {
-  const reraProjects = projects.filter(p => p.location.toLowerCase().includes('gurgaon') || p.location.toLowerCase().includes('gurugram'));
+  const reraProjects = getProjects().filter(p => p.location.toLowerCase().includes('gurgaon') || p.location.toLowerCase().includes('gurugram'));
 
   return (
     <main className="bg-[#050505] text-white min-h-screen pt-24 pb-20 px-6 md:px-16 lg:px-24">
