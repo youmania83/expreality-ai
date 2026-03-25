@@ -1,274 +1,203 @@
-import SafeImage from "@/components/SafeImage";
-import Link from "next/link";
-import { getProjects } from "@/lib/projects";
-import MicroMarketInsights from "@/components/MicroMarketInsights";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const projects = getProjects();
-  const project = projects.find((p) => p.slug.toLowerCase() === slug.toLowerCase());
-
-  if (!project) {
-    return { title: "Asset Not Found | Exprealty" };
-  }
-
-  return {
-    title: `${project.name} | Luxury Apartments in ${project.location} | Exprealty`,
-    description: `Explore ${project.name} by ${project.developer}. Premium luxury apartments and homes in ${project.location}. Starting at ${project.startingPrice}.`,
-    alternates: {
-      canonical: `/projects/${slug}`,
-    },
-    openGraph: {
-      title: `${project.name} | Luxury Apartments in ${project.location} | Exprealty`,
-      description: `Explore ${project.name} by ${project.developer}. Premium luxury apartments and homes in ${project.location}. Starting at ${project.startingPrice}.`,
-      images: [
-        {
-          url: project.image || "/projects/default.jpg",
-          width: 1200,
-          height: 630,
-          alt: project.name,
-        },
-      ],
-    },
-  };
-}
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getProjects, getProjectBySlug, getLocationBySlug } from '@/lib/data';
+import Link from 'next/link';
+import { MapPin, Building2, CheckCircle, XCircle, Info, ShieldAlert, Droplets, Zap, Wrench } from 'lucide-react';
 
 export async function generateStaticParams() {
   const projects = getProjects();
-  return projects.map((project) => ({
-    slug: project.slug,
+  return projects.map((proj) => ({
+    slug: proj.slug,
   }));
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const projects = getProjects();
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const project = getProjectBySlug(resolvedParams.slug);
+  if (!project) return { title: 'Project Not Found' };
   
-  const project = projects.find(
-    (p) => p.slug.toLowerCase() === slug.toLowerCase()
-  );
+  return {
+    title: `${project.name} Review, Pros & Cons | Expreality`,
+    description: `Read independent ground reality analysis for ${project.name}, including construction quality, amenities, water supply and resident sentiment.`,
+    openGraph: {
+      title: `${project.name} Intelligence Report`,
+      description: `Read verified, ground-reality insights for ${project.name}.`,
+    }
+  };
+}
+
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const project = getProjectBySlug(resolvedParams.slug);
 
   if (!project) {
     notFound();
   }
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["RealEstateListing", "Product"],
-    "name": project.name,
-    "description": `Luxury project in ${project.location} by ${project.developer}. Starting price: ${project.startingPrice}`,
-    "image": project.image ? `https://exprealty.in${project.image}` : `https://exprealty.in/projects/default.jpg`,
-    "url": `https://exprealty.in/projects/${slug}`,
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "price": project.startingPrice ? project.startingPrice.replace(/[^0-9.]/g, '') || "0" : "0",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "RealEstateAgent",
-        "name": "Exprealty"
-      }
-    }
-  };
+  const location = getLocationBySlug(project.location_slug);
 
-  const breadcrumbJsonLd = {
+  const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://exprealty.in"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Projects",
-        "item": "https://exprealty.in/projects"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": project.name,
-        "item": `https://exprealty.in/projects/${slug}`
+    "@type": "FAQPage",
+    "mainEntity": project.faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
       }
-    ]
+    }))
   };
-
-  // Graceful handling for stubs / direct navigators
-  if (project.hasDedicatedPage === false) {
-    return (
-      <main className="relative min-h-screen flex items-center justify-center p-4">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-        {/* Background */}
-        <div className="absolute inset-0">
-          <SafeImage src={project.image || "/projects/default.jpg"} alt={project.name} fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
-        </div>
-        
-        <div className="relative z-10 w-full max-w-lg bg-[#0A0A0A]/80 border border-white/10 rounded-3xl shadow-[0_24px_70px_rgba(0,0,0,0.8)] overflow-hidden animate-fade-in">
-          <div className="relative h-48 w-full">
-            <SafeImage src={project.image || "/projects/default.jpg"} alt={project.name} fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
-          </div>
-          
-          <div className="p-6 md:p-8 relative z-20 -mt-16">
-            <span className="px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#C6A15B] border border-[#C6A15B]/30 rounded-sm bg-black/80 backdrop-blur-md mb-3 inline-block">
-              {project.status || "Premium Asset"}
-            </span>
-            <h3 className="text-3xl font-semibold text-gray-100 mb-2">{project.name}</h3>
-            <p className="text-sm text-gray-400 mb-8 leading-relaxed">
-              {project.intelligence?.marketInsights?.priceTrend || "Exclusive off-market opportunity available for private viewing."}
-            </p>
-            
-            <div className="space-y-3">
-              <a 
-                href={project.developerUrl || "#"} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full flex justify-center items-center gap-2 bg-white/5 text-white border border-white/10 px-6 py-3.5 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors"
-              >
-                Visit Developer Website
-                <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-              <a 
-                href={project.brochureUrl || "#"} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full flex justify-center items-center gap-2 bg-[#C6A15B] text-black px-6 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#C6A15B]/90 transition-colors"
-              >
-                Download Brochure
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-              </a>
-            </div>
-            
-            <Link href="/projects" className="mt-6 w-full flex justify-center text-[10px] tracking-widest uppercase text-gray-500 hover:text-white transition-colors py-2">
-              Back to Portfolio
-            </Link>
-          </div>
-        </div>
-      </main>
-    );
-  }
 
   return (
-    <main className="bg-[#050505] text-white min-h-screen pb-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+    <div className="min-h-screen bg-[#050505] text-[#EDEDED] font-sans pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       {/* HERO SECTION */}
-      <section className="relative h-[65vh] md:h-[80vh] w-full flex items-end pb-16 md:pb-24">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <SafeImage
-            src={project.image || "/projects/default.jpg"}
-            alt={`${project.name} - ${project.location}`}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 w-full px-6 md:px-16 lg:px-24 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="max-w-3xl">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="px-3 py-1 text-xs uppercase tracking-widest text-black bg-[#C6A15B] rounded-sm font-semibold">
-                  {project.status}
-                </span>
-                <span className="px-3 py-1 text-xs uppercase tracking-widest text-[#C6A15B] border border-[#C6A15B]/30 rounded-sm bg-black/50 backdrop-blur-md">
-                  {project.developer}
+      <section className="relative pt-32 pb-16 px-6 md:px-16 lg:px-24 border-b border-white/5 bg-gradient-to-b from-[#0A0A0A] to-[#050505]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+          <div>
+            <div className="flex items-center gap-2 text-[#C6A15B] uppercase tracking-widest text-xs font-semibold mb-4">
+              <Building2 className="w-4 h-4" />
+              <span>Project Review & Intelligence</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
+              {project.name}
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-xl border border-white/10 w-max">
+                <span className="text-xs uppercase text-gray-400 font-medium">Pricing</span>
+                <span className="font-semibold text-lg">{project.price_range}</span>
+              </div>
+              <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-xl border border-white/10 w-max">
+                <span className="text-xs uppercase text-gray-400 font-medium">Segment</span>
+                <span className={`font-semibold text-sm uppercase tracking-wider ${project.segment === 'luxury' ? 'text-[#C6A15B]' : project.segment === 'mid' ? 'text-blue-400' : 'text-green-400'}`}>
+                  {project.segment}
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-4">
-                {project.name}
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 font-light max-w-xl">
-                {project.location}
-              </p>
+              {location && (
+                <Link href={`/locations/${location.slug}`} className="flex items-center gap-2 group px-4 py-3 bg-[#C6A15B]/10 hover:bg-[#C6A15B]/20 text-[#C6A15B] transition-colors rounded-xl border border-[#C6A15B]/20">
+                  <MapPin className="w-4 h-4" />
+                  <span className="font-medium text-sm">View {location.name} Intelligence Report <span className="inline-block transform group-hover:translate-x-1 transition-transform">&rarr;</span></span>
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KEY INSIGHTS */}
+      <section className="px-6 md:px-16 lg:px-24 py-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-light tracking-tight mb-8">Verified <span className="font-semibold">Insights</span></h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-[#0A0A0A] p-6 rounded-2xl border border-white/5 flex flex-col h-full gap-3">
+              <div className="flex items-center gap-2 text-[#C6A15B] text-sm font-semibold uppercase tracking-wider mb-2">
+                <ShieldAlert className="w-4 h-4" /> Construction
+              </div>
+              <p className="text-gray-300 font-medium text-lg leading-relaxed">{project.insights.construction_quality}</p>
             </div>
             
-            <div className="md:text-right bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 md:min-w-[280px]">
-              <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">
-                Entry Valuation
-              </p>
-              <p className="text-3xl md:text-4xl font-semibold text-[#C6A15B]">
-                {project.startingPrice}
-              </p>
-              <div className="mt-6 pt-6 border-t border-white/10">
-                <Link 
-                  href="/contact"
-                  className="block text-center bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition text-sm"
-                >
-                  Request Dossier
-                </Link>
+            <div className="bg-[#0A0A0A] p-6 rounded-2xl border border-white/5 flex flex-col h-full gap-3">
+              <div className="flex items-center gap-2 text-[#C6A15B] text-sm font-semibold uppercase tracking-wider mb-2">
+                <Info className="w-4 h-4" /> Amenities
               </div>
+              <p className="text-gray-300 font-medium text-lg leading-relaxed">{project.insights.amenities}</p>
+            </div>
+            
+            <div className="bg-[#0A0A0A] p-6 rounded-2xl border border-white/5 flex flex-col h-full gap-3">
+              <div className="flex items-center gap-2 text-[#C6A15B] text-sm font-semibold uppercase tracking-wider mb-2">
+                <Droplets className="w-4 h-4" /> Water Supply
+              </div>
+              <p className="text-gray-300 font-medium text-lg leading-relaxed">{project.insights.water}</p>
+            </div>
+
+            <div className="bg-[#0A0A0A] p-6 rounded-2xl border border-white/5 flex flex-col h-full gap-3">
+              <div className="flex items-center gap-2 text-[#C6A15B] text-sm font-semibold uppercase tracking-wider mb-2">
+                <Zap className="w-4 h-4" /> Backup
+              </div>
+              <p className="text-gray-300 font-medium text-lg leading-relaxed">{project.insights.power_backup}</p>
+            </div>
+
+            {project.insights.maintenance && (
+              <div className="bg-[#0A0A0A] p-6 rounded-2xl border border-white/5 flex flex-col h-full gap-3 lg:col-span-4">
+                <div className="flex items-center gap-2 text-[#C6A15B] text-sm font-semibold uppercase tracking-wider mb-2">
+                  <Wrench className="w-4 h-4" /> Maintenance Assessment
+                </div>
+                <p className="text-gray-300 font-medium text-lg leading-relaxed">{project.insights.maintenance}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* PROS AND CONS AND LOCATION SUMMARY */}
+      <section className="px-6 md:px-16 lg:px-24 py-12 bg-[#0A0A0A] border-y border-white/5">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* PROS & CONS */}
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl font-light tracking-tight mb-6 text-white">Project: <span className="font-semibold">Pros</span></h2>
+              <ul className="space-y-4">
+                {project.pros.map((pro, i) => (
+                  <li key={i} className="flex items-start gap-4 p-4 bg-[#111] border border-white/5 rounded-xl">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span className="text-gray-300">{pro}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-light tracking-tight mb-6 text-white">Project: <span className="font-semibold">Cons</span></h2>
+              <ul className="space-y-4">
+                {project.cons.map((con, i) => (
+                  <li key={i} className="flex items-start gap-4 p-4 bg-[#111] border border-white/5 rounded-xl">
+                    <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                    <span className="text-gray-300">{con}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+          
+          {/* LOCATION SUMMARY */}
+          {location && (
+            <div className="bg-[#050505] border border-white/10 rounded-2xl p-8 flex flex-col lg:col-span-1">
+              <h3 className="text-xl font-medium mb-6">Location Context: <span className="text-[#C6A15B]">{location.name}</span></h3>
+              <div className="flex justify-between items-center mb-6 pb-6 border-b border-white/5">
+                <span className="text-gray-400 font-light text-sm uppercase tracking-wider">Livability Score</span>
+                <span className={`text-2xl font-bold ${location.livability_score >= 8 ? 'text-green-400' : 'text-yellow-400'}`}>
+                  {location.livability_score}<span className="text-sm font-light text-gray-500">/10</span>
+                </span>
+              </div>
+              <p className="text-gray-400 leading-relaxed text-sm mb-8 flex-1">
+                Before deciding on this project, ensure the surrounding location meets your infrastructure and livability requirements.
+              </p>
+              <Link href={`/locations/${location.slug}`} className="w-full text-center bg-white text-black py-4 rounded-xl font-medium hover:bg-gray-200 transition-colors">
+                Read Location Report
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* INTELLIGENCE DASHBOARD COMPONENT */}
-      <MicroMarketInsights 
-        location={project.location}
-        intelligence={project.intelligence}
-      />
-
-      {/* CTA SECTION */}
-      <section className="px-6 md:px-16 lg:px-24 py-16 md:py-24 border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center bg-gradient-to-br from-[#111] to-black p-10 md:p-16 rounded-3xl border border-white/10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Secure This Asset
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto mb-8">
-            Access strictly guarded layouts, real-time availability, and structured payment advisories through our private client network.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/contact"
-              className="w-full sm:w-auto bg-[#C6A15B] text-black px-8 py-3.5 rounded-full font-semibold hover:bg-[#C6A15B]/90 transition"
-            >
-              Schedule Private Viewing
-            </Link>
-            <Link 
-              href="/projects"
-              className="w-full sm:w-auto px-8 py-3.5 border border-white/20 text-white rounded-full font-medium hover:bg-white/5 transition"
-            >
-              Explore Portfolio
-            </Link>
-            {project.brochureUrl && (
-              <a 
-                href={project.brochureUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 border border-white/20 text-white rounded-full font-medium hover:bg-white/5 transition"
-              >
-                Download Brochure
-              </a>
-            )}
-            {project.developerUrl && (
-              <a 
-                href={project.developerUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 border border-[#C6A15B]/30 text-[#C6A15B] rounded-full font-medium hover:bg-[#C6A15B]/10 transition"
-              >
-                Visit Developer Website
-              </a>
-            )}
+      {/* FAQ SECTION (SEO) */}
+      <section className="px-6 md:px-16 lg:px-24 py-20">
+        <div className="max-w-4xl flex flex-col mx-auto">
+          <h2 className="text-2xl font-light tracking-tight mb-10 text-center">Questions about <span className="font-semibold">{project.name}</span></h2>
+          <div className="space-y-6">
+            {project.faq.map((item, i) => (
+              <div key={i} className="bg-[#0A0A0A] border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors">
+                <h3 className="text-lg font-medium text-white mb-4 leading-snug">{item.question}</h3>
+                <p className="text-gray-400 font-light leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

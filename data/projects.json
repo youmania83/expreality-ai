@@ -1,1778 +1,439 @@
 [
   {
-    "name": "The Dubai Reserve Signature Villas",
-    "slug": "the-dubai-reserve-signature-villas",
-    "city": "Dubai",
-    "country": "Global",
-    "micro_market": "Prime Dubai Center",
-    "price_range": "$2.0M - $16.9M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "34.1111",
-      "lng": "-102.5202"
+    "name": "DLF Camellias",
+    "slug": "dlf-camellias",
+    "location_slug": "golf-course-road",
+    "price_range": "₹60Cr - ₹100Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Ultra-Premium World Class",
+      "amenities": "Six star clubhouse, unparalleled in India",
+      "water": "100% stable private hydro-pneumatic supply",
+      "power_backup": "100% DG with N+1 redundancy",
+      "maintenance": "Immaculate, highly professional"
     },
-    "hero_image": "/projects/the-dubai-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-dubai-reserve-signature-villas/1.jpg",
-      "/projects/the-dubai-reserve-signature-villas/2.jpg",
-      "/projects/the-dubai-reserve-signature-villas/3.jpg"
+    "pros": [
+      "Most prestigious address in India",
+      "Unrivaled luxury"
     ],
-    "investment_score": "9.7",
-    "rental_yield_estimate": "4.4%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Astronomical entry barrier"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "DLF Camellias price and insights",
+        "answer": "Averaging around ₹60Cr starting, it's defined by exclusivity and bespoke finishes."
+      }
+    ]
   },
   {
-    "name": "The Dubai Reserve Signature Estates",
-    "slug": "the-dubai-reserve-signature-estates",
-    "city": "Dubai",
-    "country": "Global",
-    "micro_market": "Prime Dubai Center",
-    "price_range": "$4.5M - $11.0M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "10.4784",
-      "lng": "-156.6458"
+    "name": "DLF Magnolias",
+    "slug": "dlf-magnolias",
+    "location_slug": "golf-course-road",
+    "price_range": "₹30Cr - ₹50Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Excellent, though aging slightly compared to Camellias",
+      "amenities": "Incredible community club and golf views",
+      "water": "Stable",
+      "power_backup": "100%",
+      "maintenance": "Managed by DLF, top tier"
     },
-    "hero_image": "/projects/the-dubai-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-dubai-reserve-signature-estates/1.jpg",
-      "/projects/the-dubai-reserve-signature-estates/2.jpg",
-      "/projects/the-dubai-reserve-signature-estates/3.jpg"
+    "pros": [
+      "Established elite community",
+      "Golf course facing"
     ],
-    "investment_score": "8.9",
-    "rental_yield_estimate": "6.6%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Requires interior upgrades frequently due to age"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Is DLF Magnolias a good buy today?",
+        "answer": "Yes, it maintains tremendous liquidity among HNI circles."
+      }
+    ]
   },
   {
-    "name": "The Dubai Reserve Signature Residences",
-    "slug": "the-dubai-reserve-signature-residences",
-    "city": "Dubai",
-    "country": "Global",
-    "micro_market": "Prime Dubai Center",
-    "price_range": "$5.3M - $9.6M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-37.6964",
-      "lng": "-50.5149"
+    "name": "M3M Golf Estate",
+    "slug": "m3m-golf-estate",
+    "location_slug": "sector-65-gurgaon",
+    "price_range": "₹6Cr - ₹15Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Premium",
+      "amenities": "9-hole executive golf course, grand clubhouse",
+      "water": "No major complaints",
+      "power_backup": "100%",
+      "maintenance": "₹6 per sqft, generally good"
     },
-    "hero_image": "/projects/the-dubai-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-dubai-reserve-signature-residences/1.jpg",
-      "/projects/the-dubai-reserve-signature-residences/2.jpg",
-      "/projects/the-dubai-reserve-signature-residences/3.jpg"
+    "pros": [
+      "Massive central greens",
+      "Very active expat and corporate crowd"
     ],
-    "investment_score": "8.5",
-    "rental_yield_estimate": "6.0%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Surrounding sector roads get dusty"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "M3M Golf Estate review",
+        "answer": "Highly rated for lifestyle, but traffic on Extension road acts as a bottleneck."
+      }
+    ]
   },
   {
-    "name": "The London Reserve Signature Villas",
-    "slug": "the-london-reserve-signature-villas",
-    "city": "London",
-    "country": "Global",
-    "micro_market": "Prime London Center",
-    "price_range": "$4.0M - $14.5M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "78.3954",
-      "lng": "79.5381"
+    "name": "Emaar Marbella",
+    "slug": "emaar-marbella",
+    "location_slug": "sector-65-gurgaon",
+    "price_range": "₹10Cr - ₹20Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Spanish villa style, solid build",
+      "amenities": "Quiet low-density luxury",
+      "water": "Adequate",
+      "power_backup": "100%",
+      "maintenance": "Good"
     },
-    "hero_image": "/projects/the-london-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-london-reserve-signature-villas/1.jpg",
-      "/projects/the-london-reserve-signature-villas/2.jpg",
-      "/projects/the-london-reserve-signature-villas/3.jpg"
+    "pros": [
+      "Villa exclusively in a high-rise dominated area",
+      "Private yards"
     ],
-    "investment_score": "9.8",
-    "rental_yield_estimate": "5.4%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Seepage issues reported in some older units"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Emaar Marbella villas feedback?",
+        "answer": "Excellent layouts but require thorough inspection for dampness."
+      }
+    ]
   },
   {
-    "name": "The London Reserve Signature Estates",
-    "slug": "the-london-reserve-signature-estates",
-    "city": "London",
-    "country": "Global",
-    "micro_market": "Prime London Center",
-    "price_range": "$5.3M - $10.8M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "67.8110",
-      "lng": "31.9395"
+    "name": "Trump Towers Delhi NCR",
+    "slug": "trump-towers-gurgaon",
+    "location_slug": "golf-course-extension-road",
+    "price_range": "₹9Cr - ₹16Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Premium glass facade",
+      "amenities": "White glove services, private elevators",
+      "water": "Excellent",
+      "power_backup": "100%",
+      "maintenance": "Expected to be premium"
     },
-    "hero_image": "/projects/the-london-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-london-reserve-signature-estates/1.jpg",
-      "/projects/the-london-reserve-signature-estates/2.jpg",
-      "/projects/the-london-reserve-signature-estates/3.jpg"
+    "pros": [
+      "Brand value",
+      "Stunning architecture"
     ],
-    "investment_score": "8.8",
-    "rental_yield_estimate": "4.7%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Project faced some delivery delays"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Is Trump Tower Gurgaon ready?",
+        "answer": "It is nearing final handovers."
+      }
+    ]
   },
   {
-    "name": "The London Reserve Signature Residences",
-    "slug": "the-london-reserve-signature-residences",
-    "city": "London",
-    "country": "Global",
-    "micro_market": "Prime London Center",
-    "price_range": "$5.9M - $15.2M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-3.9282",
-      "lng": "-56.4009"
+    "name": "Ireo Victory Valley",
+    "slug": "ireo-victory-valley",
+    "location_slug": "golf-course-extension-road",
+    "price_range": "₹3Cr - ₹6Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Good, but facade shows aging",
+      "amenities": "One of the tallest towers in Gurgaon, massive pool",
+      "water": "Manageable",
+      "power_backup": "100%",
+      "maintenance": "RWA taking over from builder, some transition pains"
     },
-    "hero_image": "/projects/the-london-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-london-reserve-signature-residences/1.jpg",
-      "/projects/the-london-reserve-signature-residences/2.jpg",
-      "/projects/the-london-reserve-signature-residences/3.jpg"
+    "pros": [
+      "Incredible views from high floors",
+      "Large central courtyard"
     ],
-    "investment_score": "9.3",
-    "rental_yield_estimate": "6.0%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Ireo builder issues impacted long-term maintenance in the past"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Should I rent in Ireo Victory Valley?",
+        "answer": "Yes, flats are spacious but ensure AC VRV units are serviced."
+      }
+    ]
   },
   {
-    "name": "The New York Reserve Signature Villas",
-    "slug": "the-new-york-reserve-signature-villas",
-    "city": "New York",
-    "country": "USA",
-    "micro_market": "Prime New York Center",
-    "price_range": "$6.8M - $15.5M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "42.9234",
-      "lng": "34.1303"
+    "name": "DLF Crest",
+    "slug": "dlf-crest",
+    "location_slug": "dlf-phase-5",
+    "price_range": "₹8Cr - ₹15Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Impeccable structural integrity",
+      "amenities": "Resort style pool, grand lobby",
+      "water": "Flawless",
+      "power_backup": "100%",
+      "maintenance": "Best in class"
     },
-    "hero_image": "/projects/the-new-york-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-new-york-reserve-signature-villas/1.jpg",
-      "/projects/the-new-york-reserve-signature-villas/2.jpg",
-      "/projects/the-new-york-reserve-signature-villas/3.jpg"
+    "pros": [
+      "Location",
+      "Quality of build ignores Gurgaon dust and noise"
     ],
-    "investment_score": "8.3",
-    "rental_yield_estimate": "4.4%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "High CAM charges"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "DLF Crest vs M3M Golf Estate?",
+        "answer": "Crest wins on pure location and construction quality, M3M wins on land expanse."
+      }
+    ]
   },
   {
-    "name": "The New York Reserve Signature Estates",
-    "slug": "the-new-york-reserve-signature-estates",
-    "city": "New York",
-    "country": "USA",
-    "micro_market": "Prime New York Center",
-    "price_range": "$6.9M - $16.7M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-21.1771",
-      "lng": "15.8724"
+    "name": "ATS Pristine",
+    "slug": "ats-pristine",
+    "location_slug": "sector-150-noida",
+    "price_range": "₹2Cr - ₹4Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Classic ATS build, reliable",
+      "amenities": "Green lush landscaping, standard club",
+      "water": "Good",
+      "power_backup": "Available",
+      "maintenance": "Average to Good"
     },
-    "hero_image": "/projects/the-new-york-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-new-york-reserve-signature-estates/1.jpg",
-      "/projects/the-new-york-reserve-signature-estates/2.jpg",
-      "/projects/the-new-york-reserve-signature-estates/3.jpg"
+    "pros": [
+      "Low density",
+      "Large balconies"
     ],
-    "investment_score": "9.6",
-    "rental_yield_estimate": "4.4%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Sector 150 lacks immediate markets"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "ATS Pristine review",
+        "answer": "Solid project for end-use, purely residential and quiet."
+      }
+    ]
   },
   {
-    "name": "The New York Reserve Signature Residences",
-    "slug": "the-new-york-reserve-signature-residences",
-    "city": "New York",
-    "country": "USA",
-    "micro_market": "Prime New York Center",
-    "price_range": "$5.1M - $15.4M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-42.7628",
-      "lng": "-51.8706"
+    "name": "Godrej Palm Retreat",
+    "slug": "godrej-palm-retreat",
+    "location_slug": "sector-150-noida",
+    "price_range": "₹1.5Cr - ₹3Cr",
+    "segment": "mid",
+    "insights": {
+      "construction_quality": "Modern resort-style",
+      "amenities": "Terrace gardens, multiple pools",
+      "water": "Stable",
+      "power_backup": "100%",
+      "maintenance": "Management taken care by Godrej"
     },
-    "hero_image": "/projects/the-new-york-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-new-york-reserve-signature-residences/1.jpg",
-      "/projects/the-new-york-reserve-signature-residences/2.jpg",
-      "/projects/the-new-york-reserve-signature-residences/3.jpg"
+    "pros": [
+      "Low rise resort feel",
+      "Great for second home or weekend living"
     ],
-    "investment_score": "9.5",
-    "rental_yield_estimate": "6.5%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Far from central Noida offices"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Is Godrej Palm Retreat good?",
+        "answer": "Unique low-rise concept that feels like a resort."
+      }
+    ]
   },
   {
-    "name": "The Gurgaon Reserve Signature Villas",
-    "slug": "the-gurgaon-reserve-signature-villas",
-    "city": "Gurgaon",
-    "country": "India",
-    "micro_market": "Prime Gurgaon Center",
-    "price_range": "$6.0M - $11.4M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-21.6679",
-      "lng": "-0.7826"
+    "name": "Purvanchal Royal Park",
+    "slug": "purvanchal-royal-park",
+    "location_slug": "sector-137-noida",
+    "price_range": "₹1.2Cr - ₹2.5Cr",
+    "segment": "mid",
+    "insights": {
+      "construction_quality": "Very sturdy",
+      "amenities": "Good family club",
+      "water": "TDS issues common in area",
+      "power_backup": "Available",
+      "maintenance": "Good active RWA"
     },
-    "hero_image": "/projects/the-gurgaon-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-gurgaon-reserve-signature-villas/1.jpg",
-      "/projects/the-gurgaon-reserve-signature-villas/2.jpg",
-      "/projects/the-gurgaon-reserve-signature-villas/3.jpg"
+    "pros": [
+      "Spacious rooms compared to newer projects",
+      "Very close to Metro"
     ],
-    "investment_score": "8.6",
-    "rental_yield_estimate": "4.7%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Density of the sector"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Purvanchal Royal Park review?",
+        "answer": "Considered one of the best constructed societies in Sector 137."
+      }
+    ]
   },
   {
-    "name": "The Gurgaon Reserve Signature Estates",
-    "slug": "the-gurgaon-reserve-signature-estates",
-    "city": "Gurgaon",
-    "country": "India",
-    "micro_market": "Prime Gurgaon Center",
-    "price_range": "$6.5M - $8.4M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-6.3085",
-      "lng": "91.9407"
+    "name": "Paras Tierea",
+    "slug": "paras-tierea",
+    "location_slug": "sector-137-noida",
+    "price_range": "₹60L - ₹1.5Cr",
+    "segment": "affordable",
+    "insights": {
+      "construction_quality": "Average, mass housing feel",
+      "amenities": "Very crowded club",
+      "water": "Hard water, RO mandatory",
+      "power_backup": "Yes",
+      "maintenance": "Issues with lift wait times and seepage"
     },
-    "hero_image": "/projects/the-gurgaon-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-gurgaon-reserve-signature-estates/1.jpg",
-      "/projects/the-gurgaon-reserve-signature-estates/2.jpg",
-      "/projects/the-gurgaon-reserve-signature-estates/3.jpg"
+    "pros": [
+      "High rental yield",
+      "Affordable entry ticket"
     ],
-    "investment_score": "9.1",
-    "rental_yield_estimate": "6.0%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Overcrowded",
+      "Construction quality is subpar"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Paras Tierea rent problems?",
+        "answer": "Wait times for lifts during morning office hours can stretch to 15 minutes."
+      }
+    ]
   },
   {
-    "name": "The Gurgaon Reserve Signature Residences",
-    "slug": "the-gurgaon-reserve-signature-residences",
-    "city": "Gurgaon",
-    "country": "India",
-    "micro_market": "Prime Gurgaon Center",
-    "price_range": "$5.6M - $17.7M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "71.0318",
-      "lng": "-18.9945"
+    "name": "Mahagun Maple",
+    "slug": "mahagun-maple",
+    "location_slug": "sector-50-noida",
+    "price_range": "₹2.5Cr - ₹4Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Solid legacy construction",
+      "amenities": "Basic compared to modern projects, but very green",
+      "water": "Excellent municipal supply",
+      "power_backup": "100%",
+      "maintenance": "Well-maintained by RWA"
     },
-    "hero_image": "/projects/the-gurgaon-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-gurgaon-reserve-signature-residences/1.jpg",
-      "/projects/the-gurgaon-reserve-signature-residences/2.jpg",
-      "/projects/the-gurgaon-reserve-signature-residences/3.jpg"
+    "pros": [
+      "Unbeatable location",
+      "Peaceful"
     ],
-    "investment_score": "8.7",
-    "rental_yield_estimate": "6.9%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Old architecture",
+      "No modern smart-home features"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Buy flat in Sector 50 Noida?",
+        "answer": "Yes, it retains value excellently due to limited supply."
+      }
+    ]
   },
   {
-    "name": "The Mumbai Reserve Signature Villas",
-    "slug": "the-mumbai-reserve-signature-villas",
-    "city": "Mumbai",
-    "country": "India",
-    "micro_market": "Prime Mumbai Center",
-    "price_range": "$4.0M - $16.0M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "30.4574",
-      "lng": "-20.1411"
+    "name": "CGHS Shanti Villa",
+    "slug": "cghs-shanti-villa",
+    "location_slug": "dwarka",
+    "price_range": "₹1.8Cr - ₹2.5Cr",
+    "segment": "mid",
+    "insights": {
+      "construction_quality": "Old brick and mortar",
+      "amenities": "Basic park and guards",
+      "water": "DJB supplied, summer shortfalls",
+      "power_backup": "Inverter reliant",
+      "maintenance": "Low cost"
     },
-    "hero_image": "/projects/the-mumbai-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-mumbai-reserve-signature-villas/1.jpg",
-      "/projects/the-mumbai-reserve-signature-villas/2.jpg",
-      "/projects/the-mumbai-reserve-signature-villas/3.jpg"
+    "pros": [
+      "Tight knit community",
+      "Large carpet area"
     ],
-    "investment_score": "9.4",
-    "rental_yield_estimate": "5.7%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "No pool or gym",
+      "Poor parking ratios"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Dwarka CGHS vs New Gurgoan?",
+        "answer": "Dwarka offers better civic ecosystem, New Gurgaon offers better society amenities."
+      }
+    ]
   },
   {
-    "name": "The Mumbai Reserve Signature Estates",
-    "slug": "the-mumbai-reserve-signature-estates",
-    "city": "Mumbai",
-    "country": "India",
-    "micro_market": "Prime Mumbai Center",
-    "price_range": "$6.9M - $16.3M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "52.8601",
-      "lng": "1.8547"
+    "name": "Gaur City 2",
+    "slug": "gaur-city-2",
+    "location_slug": "noida-extension",
+    "price_range": "₹60L - ₹1.2Cr",
+    "segment": "affordable",
+    "insights": {
+      "construction_quality": "Average mass housing",
+      "amenities": "Huge stadium and club but heavily shared",
+      "water": "RO required",
+      "power_backup": "Yes",
+      "maintenance": "Varies by avenue"
     },
-    "hero_image": "/projects/the-mumbai-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-mumbai-reserve-signature-estates/1.jpg",
-      "/projects/the-mumbai-reserve-signature-estates/2.jpg",
-      "/projects/the-mumbai-reserve-signature-estates/3.jpg"
+    "pros": [
+      "Extremely integrated township (schools, mall, hospital inside)",
+      "Affordable"
     ],
-    "investment_score": "8.1",
-    "rental_yield_estimate": "6.8%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "High traffic inside",
+      "Quality issues"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Living in Gaur City review",
+        "answer": "Great if you never want to leave the township, nightmare if you commute to Gurgaon daily."
+      }
+    ]
   },
   {
-    "name": "The Mumbai Reserve Signature Residences",
-    "slug": "the-mumbai-reserve-signature-residences",
-    "city": "Mumbai",
-    "country": "India",
-    "micro_market": "Prime Mumbai Center",
-    "price_range": "$5.5M - $15.7M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-39.4935",
-      "lng": "115.0519"
+    "name": "Godrej Woods",
+    "slug": "godrej-woods",
+    "location_slug": "sector-150-noida",
+    "price_range": "₹2.5Cr - ₹5Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Premium",
+      "amenities": "Urban forest concept",
+      "water": "New infra",
+      "power_backup": "100%",
+      "maintenance": "Expected to be premium"
     },
-    "hero_image": "/projects/the-mumbai-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-mumbai-reserve-signature-residences/1.jpg",
-      "/projects/the-mumbai-reserve-signature-residences/2.jpg",
-      "/projects/the-mumbai-reserve-signature-residences/3.jpg"
+    "pros": [
+      "Unique forest theme",
+      "Reputed builder"
     ],
-    "investment_score": "8.7",
-    "rental_yield_estimate": "5.8%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
+    "cons": [
+      "Still developing sector"
     ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "faq": [
+      {
+        "question": "Godrej Woods Noida review",
+        "answer": "Premium forest-theme living but carries a slight over-valuation."
+      }
+    ]
   },
   {
-    "name": "The Singapore Reserve Signature Villas",
-    "slug": "the-singapore-reserve-signature-villas",
-    "city": "Singapore",
-    "country": "Global",
-    "micro_market": "Prime Singapore Center",
-    "price_range": "$3.2M - $13.9M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "19.1389",
-      "lng": "-64.2826"
+    "name": "BPTP Park Grandeura",
+    "slug": "bptp-park-grandeura",
+    "location_slug": "neharpar",
+    "price_range": "₹80L - ₹1.4Cr",
+    "segment": "mid",
+    "insights": {
+      "construction_quality": "Average",
+      "amenities": "Good open areas",
+      "water": "Ground water reliant",
+      "power_backup": "Partial",
+      "maintenance": "Patchy"
     },
-    "hero_image": "/projects/the-singapore-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-singapore-reserve-signature-villas/1.jpg",
-      "/projects/the-singapore-reserve-signature-villas/2.jpg",
-      "/projects/the-singapore-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "8.4",
-    "rental_yield_estimate": "5.6%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Singapore Reserve Signature Estates",
-    "slug": "the-singapore-reserve-signature-estates",
-    "city": "Singapore",
-    "country": "Global",
-    "micro_market": "Prime Singapore Center",
-    "price_range": "$3.9M - $10.1M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "75.8323",
-      "lng": "28.6435"
-    },
-    "hero_image": "/projects/the-singapore-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-singapore-reserve-signature-estates/1.jpg",
-      "/projects/the-singapore-reserve-signature-estates/2.jpg",
-      "/projects/the-singapore-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "8.9",
-    "rental_yield_estimate": "6.3%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Singapore Reserve Signature Residences",
-    "slug": "the-singapore-reserve-signature-residences",
-    "city": "Singapore",
-    "country": "Global",
-    "micro_market": "Prime Singapore Center",
-    "price_range": "$4.9M - $15.8M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-8.6611",
-      "lng": "150.6750"
-    },
-    "hero_image": "/projects/the-singapore-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-singapore-reserve-signature-residences/1.jpg",
-      "/projects/the-singapore-reserve-signature-residences/2.jpg",
-      "/projects/the-singapore-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "8.3",
-    "rental_yield_estimate": "5.4%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Bali Reserve Signature Villas",
-    "slug": "the-bali-reserve-signature-villas",
-    "city": "Bali",
-    "country": "Global",
-    "micro_market": "Prime Bali Center",
-    "price_range": "$5.3M - $14.0M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "59.5125",
-      "lng": "-93.7028"
-    },
-    "hero_image": "/projects/the-bali-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-bali-reserve-signature-villas/1.jpg",
-      "/projects/the-bali-reserve-signature-villas/2.jpg",
-      "/projects/the-bali-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "9.2",
-    "rental_yield_estimate": "6.4%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Bali Reserve Signature Estates",
-    "slug": "the-bali-reserve-signature-estates",
-    "city": "Bali",
-    "country": "Global",
-    "micro_market": "Prime Bali Center",
-    "price_range": "$5.2M - $8.3M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-89.4800",
-      "lng": "-12.7497"
-    },
-    "hero_image": "/projects/the-bali-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-bali-reserve-signature-estates/1.jpg",
-      "/projects/the-bali-reserve-signature-estates/2.jpg",
-      "/projects/the-bali-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "9.2",
-    "rental_yield_estimate": "4.1%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Bali Reserve Signature Residences",
-    "slug": "the-bali-reserve-signature-residences",
-    "city": "Bali",
-    "country": "Global",
-    "micro_market": "Prime Bali Center",
-    "price_range": "$4.9M - $17.6M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "34.0868",
-      "lng": "69.7759"
-    },
-    "hero_image": "/projects/the-bali-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-bali-reserve-signature-residences/1.jpg",
-      "/projects/the-bali-reserve-signature-residences/2.jpg",
-      "/projects/the-bali-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "9.4",
-    "rental_yield_estimate": "4.9%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Lisbon Reserve Signature Villas",
-    "slug": "the-lisbon-reserve-signature-villas",
-    "city": "Lisbon",
-    "country": "Global",
-    "micro_market": "Prime Lisbon Center",
-    "price_range": "$5.3M - $11.4M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-67.8902",
-      "lng": "-67.2659"
-    },
-    "hero_image": "/projects/the-lisbon-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-lisbon-reserve-signature-villas/1.jpg",
-      "/projects/the-lisbon-reserve-signature-villas/2.jpg",
-      "/projects/the-lisbon-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "8.8",
-    "rental_yield_estimate": "6.8%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Lisbon Reserve Signature Estates",
-    "slug": "the-lisbon-reserve-signature-estates",
-    "city": "Lisbon",
-    "country": "Global",
-    "micro_market": "Prime Lisbon Center",
-    "price_range": "$4.0M - $9.6M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-56.7780",
-      "lng": "159.8801"
-    },
-    "hero_image": "/projects/the-lisbon-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-lisbon-reserve-signature-estates/1.jpg",
-      "/projects/the-lisbon-reserve-signature-estates/2.jpg",
-      "/projects/the-lisbon-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "9.6",
-    "rental_yield_estimate": "4.7%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Lisbon Reserve Signature Residences",
-    "slug": "the-lisbon-reserve-signature-residences",
-    "city": "Lisbon",
-    "country": "Global",
-    "micro_market": "Prime Lisbon Center",
-    "price_range": "$6.6M - $16.8M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-73.0772",
-      "lng": "75.5462"
-    },
-    "hero_image": "/projects/the-lisbon-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-lisbon-reserve-signature-residences/1.jpg",
-      "/projects/the-lisbon-reserve-signature-residences/2.jpg",
-      "/projects/the-lisbon-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "8.0",
-    "rental_yield_estimate": "4.1%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Miami Reserve Signature Villas",
-    "slug": "the-miami-reserve-signature-villas",
-    "city": "Miami",
-    "country": "USA",
-    "micro_market": "Prime Miami Center",
-    "price_range": "$2.8M - $10.5M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-50.4857",
-      "lng": "-169.4575"
-    },
-    "hero_image": "/projects/the-miami-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-miami-reserve-signature-villas/1.jpg",
-      "/projects/the-miami-reserve-signature-villas/2.jpg",
-      "/projects/the-miami-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "9.4",
-    "rental_yield_estimate": "6.9%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Miami Reserve Signature Estates",
-    "slug": "the-miami-reserve-signature-estates",
-    "city": "Miami",
-    "country": "USA",
-    "micro_market": "Prime Miami Center",
-    "price_range": "$3.0M - $14.2M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-48.4323",
-      "lng": "116.3594"
-    },
-    "hero_image": "/projects/the-miami-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-miami-reserve-signature-estates/1.jpg",
-      "/projects/the-miami-reserve-signature-estates/2.jpg",
-      "/projects/the-miami-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "8.4",
-    "rental_yield_estimate": "4.8%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Miami Reserve Signature Residences",
-    "slug": "the-miami-reserve-signature-residences",
-    "city": "Miami",
-    "country": "USA",
-    "micro_market": "Prime Miami Center",
-    "price_range": "$4.8M - $10.7M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-83.3488",
-      "lng": "-88.7452"
-    },
-    "hero_image": "/projects/the-miami-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-miami-reserve-signature-residences/1.jpg",
-      "/projects/the-miami-reserve-signature-residences/2.jpg",
-      "/projects/the-miami-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "8.4",
-    "rental_yield_estimate": "6.3%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Toronto Reserve Signature Villas",
-    "slug": "the-toronto-reserve-signature-villas",
-    "city": "Toronto",
-    "country": "Global",
-    "micro_market": "Prime Toronto Center",
-    "price_range": "$6.3M - $17.9M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "79.0732",
-      "lng": "171.7597"
-    },
-    "hero_image": "/projects/the-toronto-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-toronto-reserve-signature-villas/1.jpg",
-      "/projects/the-toronto-reserve-signature-villas/2.jpg",
-      "/projects/the-toronto-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "9.3",
-    "rental_yield_estimate": "6.1%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Toronto Reserve Signature Estates",
-    "slug": "the-toronto-reserve-signature-estates",
-    "city": "Toronto",
-    "country": "Global",
-    "micro_market": "Prime Toronto Center",
-    "price_range": "$5.3M - $8.2M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-34.9796",
-      "lng": "-103.2515"
-    },
-    "hero_image": "/projects/the-toronto-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-toronto-reserve-signature-estates/1.jpg",
-      "/projects/the-toronto-reserve-signature-estates/2.jpg",
-      "/projects/the-toronto-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "8.2",
-    "rental_yield_estimate": "4.4%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Toronto Reserve Signature Residences",
-    "slug": "the-toronto-reserve-signature-residences",
-    "city": "Toronto",
-    "country": "Global",
-    "micro_market": "Prime Toronto Center",
-    "price_range": "$2.5M - $16.8M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "88.3483",
-      "lng": "-46.2444"
-    },
-    "hero_image": "/projects/the-toronto-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-toronto-reserve-signature-residences/1.jpg",
-      "/projects/the-toronto-reserve-signature-residences/2.jpg",
-      "/projects/the-toronto-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "9.1",
-    "rental_yield_estimate": "5.1%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Doha Reserve Signature Villas",
-    "slug": "the-doha-reserve-signature-villas",
-    "city": "Doha",
-    "country": "Global",
-    "micro_market": "Prime Doha Center",
-    "price_range": "$2.8M - $17.0M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "29.9758",
-      "lng": "-62.5613"
-    },
-    "hero_image": "/projects/the-doha-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-doha-reserve-signature-villas/1.jpg",
-      "/projects/the-doha-reserve-signature-villas/2.jpg",
-      "/projects/the-doha-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "8.0",
-    "rental_yield_estimate": "5.2%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Doha Reserve Signature Estates",
-    "slug": "the-doha-reserve-signature-estates",
-    "city": "Doha",
-    "country": "Global",
-    "micro_market": "Prime Doha Center",
-    "price_range": "$4.4M - $17.3M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "9.8068",
-      "lng": "-118.4417"
-    },
-    "hero_image": "/projects/the-doha-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-doha-reserve-signature-estates/1.jpg",
-      "/projects/the-doha-reserve-signature-estates/2.jpg",
-      "/projects/the-doha-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "9.1",
-    "rental_yield_estimate": "6.3%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Doha Reserve Signature Residences",
-    "slug": "the-doha-reserve-signature-residences",
-    "city": "Doha",
-    "country": "Global",
-    "micro_market": "Prime Doha Center",
-    "price_range": "$6.9M - $12.8M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-56.7245",
-      "lng": "13.4439"
-    },
-    "hero_image": "/projects/the-doha-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-doha-reserve-signature-residences/1.jpg",
-      "/projects/the-doha-reserve-signature-residences/2.jpg",
-      "/projects/the-doha-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "9.6",
-    "rental_yield_estimate": "4.6%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Goa Reserve Signature Villas",
-    "slug": "the-goa-reserve-signature-villas",
-    "city": "Goa",
-    "country": "India",
-    "micro_market": "Prime Goa Center",
-    "price_range": "$5.1M - $11.9M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-8.6058",
-      "lng": "50.4285"
-    },
-    "hero_image": "/projects/the-goa-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-goa-reserve-signature-villas/1.jpg",
-      "/projects/the-goa-reserve-signature-villas/2.jpg",
-      "/projects/the-goa-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "8.4",
-    "rental_yield_estimate": "5.1%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Goa Reserve Signature Estates",
-    "slug": "the-goa-reserve-signature-estates",
-    "city": "Goa",
-    "country": "India",
-    "micro_market": "Prime Goa Center",
-    "price_range": "$6.8M - $12.8M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-33.8645",
-      "lng": "-170.5194"
-    },
-    "hero_image": "/projects/the-goa-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-goa-reserve-signature-estates/1.jpg",
-      "/projects/the-goa-reserve-signature-estates/2.jpg",
-      "/projects/the-goa-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "8.8",
-    "rental_yield_estimate": "6.2%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Goa Reserve Signature Residences",
-    "slug": "the-goa-reserve-signature-residences",
-    "city": "Goa",
-    "country": "India",
-    "micro_market": "Prime Goa Center",
-    "price_range": "$4.7M - $17.5M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-15.1480",
-      "lng": "143.1084"
-    },
-    "hero_image": "/projects/the-goa-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-goa-reserve-signature-residences/1.jpg",
-      "/projects/the-goa-reserve-signature-residences/2.jpg",
-      "/projects/the-goa-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "8.1",
-    "rental_yield_estimate": "6.5%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Phuket Reserve Signature Villas",
-    "slug": "the-phuket-reserve-signature-villas",
-    "city": "Phuket",
-    "country": "Global",
-    "micro_market": "Prime Phuket Center",
-    "price_range": "$5.4M - $9.1M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-51.4498",
-      "lng": "153.8533"
-    },
-    "hero_image": "/projects/the-phuket-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-phuket-reserve-signature-villas/1.jpg",
-      "/projects/the-phuket-reserve-signature-villas/2.jpg",
-      "/projects/the-phuket-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "9.3",
-    "rental_yield_estimate": "6.4%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Phuket Reserve Signature Estates",
-    "slug": "the-phuket-reserve-signature-estates",
-    "city": "Phuket",
-    "country": "Global",
-    "micro_market": "Prime Phuket Center",
-    "price_range": "$2.1M - $9.6M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-77.1543",
-      "lng": "86.4458"
-    },
-    "hero_image": "/projects/the-phuket-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-phuket-reserve-signature-estates/1.jpg",
-      "/projects/the-phuket-reserve-signature-estates/2.jpg",
-      "/projects/the-phuket-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "9.5",
-    "rental_yield_estimate": "6.2%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Phuket Reserve Signature Residences",
-    "slug": "the-phuket-reserve-signature-residences",
-    "city": "Phuket",
-    "country": "Global",
-    "micro_market": "Prime Phuket Center",
-    "price_range": "$3.5M - $16.2M",
-    "currency": "USD",
-    "property_type": "Luxury Apartment",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-79.9034",
-      "lng": "170.4868"
-    },
-    "hero_image": "/projects/the-phuket-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-phuket-reserve-signature-residences/1.jpg",
-      "/projects/the-phuket-reserve-signature-residences/2.jpg",
-      "/projects/the-phuket-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "8.9",
-    "rental_yield_estimate": "4.1%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Tulum Reserve Signature Villas",
-    "slug": "the-tulum-reserve-signature-villas",
-    "city": "Tulum",
-    "country": "Global",
-    "micro_market": "Prime Tulum Center",
-    "price_range": "$5.3M - $13.7M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "67.5815",
-      "lng": "-145.3984"
-    },
-    "hero_image": "/projects/the-tulum-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-tulum-reserve-signature-villas/1.jpg",
-      "/projects/the-tulum-reserve-signature-villas/2.jpg",
-      "/projects/the-tulum-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "8.2",
-    "rental_yield_estimate": "6.9%",
-    "appreciation_potential": "High",
-    "status": "Ready to Move",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Tulum Reserve Signature Estates",
-    "slug": "the-tulum-reserve-signature-estates",
-    "city": "Tulum",
-    "country": "Global",
-    "micro_market": "Prime Tulum Center",
-    "price_range": "$2.6M - $11.1M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "45.7243",
-      "lng": "33.8199"
-    },
-    "hero_image": "/projects/the-tulum-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-tulum-reserve-signature-estates/1.jpg",
-      "/projects/the-tulum-reserve-signature-estates/2.jpg",
-      "/projects/the-tulum-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "9.3",
-    "rental_yield_estimate": "5.6%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Tulum Reserve Signature Residences",
-    "slug": "the-tulum-reserve-signature-residences",
-    "city": "Tulum",
-    "country": "Global",
-    "micro_market": "Prime Tulum Center",
-    "price_range": "$4.9M - $13.6M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-15.7790",
-      "lng": "156.0438"
-    },
-    "hero_image": "/projects/the-tulum-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-tulum-reserve-signature-residences/1.jpg",
-      "/projects/the-tulum-reserve-signature-residences/2.jpg",
-      "/projects/the-tulum-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "9.1",
-    "rental_yield_estimate": "6.6%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Istanbul Reserve Signature Villas",
-    "slug": "the-istanbul-reserve-signature-villas",
-    "city": "Istanbul",
-    "country": "Global",
-    "micro_market": "Prime Istanbul Center",
-    "price_range": "$4.5M - $12.9M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "-65.2544",
-      "lng": "133.5069"
-    },
-    "hero_image": "/projects/the-istanbul-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-istanbul-reserve-signature-villas/1.jpg",
-      "/projects/the-istanbul-reserve-signature-villas/2.jpg",
-      "/projects/the-istanbul-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "9.3",
-    "rental_yield_estimate": "5.3%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Istanbul Reserve Signature Estates",
-    "slug": "the-istanbul-reserve-signature-estates",
-    "city": "Istanbul",
-    "country": "Global",
-    "micro_market": "Prime Istanbul Center",
-    "price_range": "$3.7M - $12.0M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "40.2342",
-      "lng": "40.7759"
-    },
-    "hero_image": "/projects/the-istanbul-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-istanbul-reserve-signature-estates/1.jpg",
-      "/projects/the-istanbul-reserve-signature-estates/2.jpg",
-      "/projects/the-istanbul-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "8.6",
-    "rental_yield_estimate": "4.6%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Istanbul Reserve Signature Residences",
-    "slug": "the-istanbul-reserve-signature-residences",
-    "city": "Istanbul",
-    "country": "Global",
-    "micro_market": "Prime Istanbul Center",
-    "price_range": "$6.1M - $11.4M",
-    "currency": "USD",
-    "property_type": "Villa",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "65.5081",
-      "lng": "79.5578"
-    },
-    "hero_image": "/projects/the-istanbul-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-istanbul-reserve-signature-residences/1.jpg",
-      "/projects/the-istanbul-reserve-signature-residences/2.jpg",
-      "/projects/the-istanbul-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "9.0",
-    "rental_yield_estimate": "6.1%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Bangkok Reserve Signature Villas",
-    "slug": "the-bangkok-reserve-signature-villas",
-    "city": "Bangkok",
-    "country": "Global",
-    "micro_market": "Prime Bangkok Center",
-    "price_range": "$2.3M - $16.6M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "74.1611",
-      "lng": "-146.0593"
-    },
-    "hero_image": "/projects/the-bangkok-reserve-signature-villas/hero.jpg",
-    "gallery_images": [
-      "/projects/the-bangkok-reserve-signature-villas/1.jpg",
-      "/projects/the-bangkok-reserve-signature-villas/2.jpg",
-      "/projects/the-bangkok-reserve-signature-villas/3.jpg"
-    ],
-    "investment_score": "9.8",
-    "rental_yield_estimate": "6.3%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Bangkok Reserve Signature Estates",
-    "slug": "the-bangkok-reserve-signature-estates",
-    "city": "Bangkok",
-    "country": "Global",
-    "micro_market": "Prime Bangkok Center",
-    "price_range": "$4.5M - $8.2M",
-    "currency": "USD",
-    "property_type": "Penthouse",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "72.2586",
-      "lng": "117.1396"
-    },
-    "hero_image": "/projects/the-bangkok-reserve-signature-estates/hero.jpg",
-    "gallery_images": [
-      "/projects/the-bangkok-reserve-signature-estates/1.jpg",
-      "/projects/the-bangkok-reserve-signature-estates/2.jpg",
-      "/projects/the-bangkok-reserve-signature-estates/3.jpg"
-    ],
-    "investment_score": "9.7",
-    "rental_yield_estimate": "4.0%",
-    "appreciation_potential": "High",
-    "status": "Off-Market",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
-  },
-  {
-    "name": "The Bangkok Reserve Signature Residences",
-    "slug": "the-bangkok-reserve-signature-residences",
-    "city": "Bangkok",
-    "country": "Global",
-    "micro_market": "Prime Bangkok Center",
-    "price_range": "$6.3M - $17.2M",
-    "currency": "USD",
-    "property_type": "Mansion",
-    "developer": "Global Signature Developers",
-    "geo_coordinates": {
-      "lat": "3.7713",
-      "lng": "63.9457"
-    },
-    "hero_image": "/projects/the-bangkok-reserve-signature-residences/hero.jpg",
-    "gallery_images": [
-      "/projects/the-bangkok-reserve-signature-residences/1.jpg",
-      "/projects/the-bangkok-reserve-signature-residences/2.jpg",
-      "/projects/the-bangkok-reserve-signature-residences/3.jpg"
-    ],
-    "investment_score": "9.9",
-    "rental_yield_estimate": "6.3%",
-    "appreciation_potential": "High",
-    "status": "Pre-Launch",
-    "why_invest": [
-      "Rare waterfront/skyline views",
-      "Exclusive private amenities",
-      "High historical capital appreciation",
-      "Surrounded by elite infrastructure"
-    ],
-    "target_buyer": "UHNWI, Institutional Investors, Family Offices",
-    "risk_factors": [
-      "Market cyclicality",
-      "Currency fluctuation"
-    ],
-    "exit_strategy": "Secondary market resale to international buyers within 5-7 years"
+    "pros": [
+      "Affordable mid-segment",
+      "Large layout"
+    ],
+    "cons": [
+      "BPTP legacy issues with maintenance",
+      "Civic infra outside society is poor"
+    ],
+    "faq": [
+      {
+        "question": "Is BPTP Grandeura good?",
+        "answer": "It presents good value for money but requires compromising on external road quality."
+      }
+    ]
   }
 ]

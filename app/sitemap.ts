@@ -1,23 +1,27 @@
 import { MetadataRoute } from 'next'
-import { getProjects } from '@/lib/projects'
+import { getProjects, getLocations } from '@/lib/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://exprealty.in';
 
-  // Core authority pages and general pages
+  // Core authority pages
   const routes = [
     '',
-    '/projects',
-    '/rera-approved-projects-gurgaon',
-    '/luxury-apartments-golf-course-road',
-    '/ultra-luxury-homes-delhi-ncr',
-    '/contact',
-    '/advisory'
+    '/search',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
+  }));
+
+  // Dynamic Location Pages
+  const locations = getLocations();
+  const locationRoutes = locations.map((loc) => ({
+    url: `${baseUrl}/locations/${loc.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
   }));
 
   // Dynamic Project Pages
@@ -29,5 +33,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...projectRoutes];
+  return [...routes, ...locationRoutes, ...projectRoutes];
 }
