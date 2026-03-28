@@ -193,6 +193,22 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             </ul>
           </div>
         </div>
+
+        {/* PREMIUM CTA */}
+        <div className="max-w-4xl mx-auto mt-16 p-10 md:p-14 text-center rounded-3xl bg-gradient-to-br from-[#111111] to-[#0A0A0A] border border-white/10 shadow-2xl relative overflow-hidden group">
+          <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <h3 className="text-2xl md:text-4xl font-light tracking-tight mb-4 relative z-10 text-gray-300">
+            Are you looking to <span className="font-bold text-white">RENT</span> or <span className="font-bold text-white">Buy</span> in <span className="text-[#C6A15B] font-medium">{location.name}</span>?
+          </h3>
+          <p className="text-lg md:text-xl text-gray-400 mb-10 relative z-10 font-light">
+            Call us before making any decision.
+          </p>
+          <a href="https://wa.me/918368137724" target="_blank" rel="noopener noreferrer" className="inline-block relative z-10 bg-white/5 border border-[#C6A15B]/30 rounded-full py-4 px-8 hover:bg-[#C6A15B]/10 hover:border-[#C6A15B] hover:scale-105 transition-all shadow-[0_0_20px_rgba(198,161,91,0.1)]">
+            <span className="text-white font-bold text-lg md:text-xl tracking-wide">
+              WhatsApp on +918368137724 for more details
+            </span>
+          </a>
+        </div>
       </section>
 
       {/* NEARBY PROJECTS */}
