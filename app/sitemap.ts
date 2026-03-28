@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/search',
+    '/directory',
     '/rera-approved-projects-gurgaon',
     '/luxury-apartments-golf-course-road',
     '/investment-properties-dubai',

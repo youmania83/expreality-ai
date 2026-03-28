@@ -38,6 +38,9 @@ export const Footer: React.FC = () => {
             <Link href="/contact" className="hover:text-[#C6A15B]">
               Contact
             </Link>
+            <Link href="/directory" className="hover:text-[#C6A15B]">
+              Site Directory
+            </Link>
           </div>
         </div>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[11px] text-gray-500">

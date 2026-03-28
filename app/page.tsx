@@ -177,6 +177,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* EXCLUSIVE MARKETS & COLLECTIONS */}
+      <section className="px-6 md:px-16 lg:px-24 py-24 border-t border-white/5 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-light tracking-tight">
+              Curated <span className="font-semibold">Collections</span>
+            </h2>
+            <p className="mt-4 text-gray-400 font-light max-w-xl">
+              Explore our highest intent property categories and global investment hubs.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/rera-approved-projects-gurgaon" className="group p-8 bg-[#111] rounded-2xl border border-white/5 hover:border-[#C6A15B]/40 transition-all flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-[#C6A15B] transition-colors">RERA Approved Projects Gurgaon</h3>
+                <p className="text-sm text-gray-400 font-light">100% verified, legal, and risk-free luxury assets.</p>
+              </div>
+            </Link>
+            <Link href="/luxury-apartments-golf-course-road" className="group p-8 bg-[#111] rounded-2xl border border-white/5 hover:border-[#C6A15B]/40 transition-all flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-[#C6A15B] transition-colors">Luxury Apartments Golf Course Road</h3>
+                <p className="text-sm text-gray-400 font-light">The Billionaire's Row of India.</p>
+              </div>
+            </Link>
+            <Link href="/investment-properties-dubai" className="group p-8 bg-[#111] rounded-2xl border border-white/5 hover:border-[#C6A15B]/40 transition-all flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-[#C6A15B] transition-colors">Investment Properties Dubai</h3>
+                <p className="text-sm text-gray-400 font-light">Tax-free yields and Golden Visa eligibility.</p>
+              </div>
+            </Link>
+            <Link href="/directory" className="group p-8 bg-[#111] rounded-2xl border border-[#C6A15B]/20 hover:border-[#C6A15B] transition-all flex items-center justify-between col-span-1 md:col-span-3">
+              <div>
+                <h3 className="text-xl font-semibold mb-1 group-hover:text-[#C6A15B] transition-colors">View Complete Platform Directory</h3>
+                <p className="text-sm text-gray-400 font-light">Full index of all cities, projects, and insights.</p>
+              </div>
+              <span className="text-[#C6A15B] text-xl font-semibold">&rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* WHY EXPREALITY */}
       <section className="px-6 md:px-16 lg:px-24 py-32 border-t border-white/5 relative bg-[#050505] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C6A15B]/5 blur-[100px] rounded-full pointer-events-none" />
