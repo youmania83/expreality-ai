@@ -6,6 +6,22 @@ import { Search, MapPin, Building2, ShieldCheck, Activity } from 'lucide-react';
 export const metadata = {
   title: 'Expreality | Decision Intelligence for Real Estate',
   description: 'Know where to live before you decide. Data-driven insights and real-life living conditions for locations and premium projects.',
+  openGraph: {
+    title: 'Expreality | Decision Intelligence for Real Estate',
+    description: 'Know where to live before you decide. Data-driven insights and real-life living conditions for locations and premium projects.',
+    url: 'https://exprealty.in',
+    siteName: 'Exprealty',
+    type: 'website',
+    images: ['https://exprealty.in/featured/og-image-default.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Expreality | Decision Intelligence for Real Estate',
+    description: 'Know where to live before you decide. Data-driven insights and real-life living conditions for locations and premium projects.',
+    images: ['https://exprealty.in/featured/og-image-default.jpg'],
+    site: '@Exprealty',
+    creator: '@Exprealty',
+  },
 };
 
 export default function HomePage() {
@@ -21,7 +37,7 @@ export default function HomePage() {
         <div className="relative z-10 w-full px-6 flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 rounded-full bg-white/5 backdrop-blur-md">
             <Activity className="w-4 h-4 text-[#C6A15B]" />
-            <span className="uppercase tracking-[0.2em] text-[10px] md:text-xs text-[#C6A15B] font-medium">Delhi NCR Intelligence Platform</span>
+            <span className="uppercase tracking-[0.2em] text-[10px] md:text-xs text-[#C6A15B] font-medium">Delhi NCR & Panipat Intelligence Platform</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1.1]">
@@ -30,7 +46,7 @@ export default function HomePage() {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl font-light tracking-wide leading-relaxed">
-            Stop scrolling through endless property listings. Get verified, ground-reality insights on livability, safety, water supply, and infrastructure for Gurgaon, Noida, and Delhi.
+            Stop scrolling through endless property listings. Get verified, ground-reality insights on livability, safety, water supply, and infrastructure for Gurgaon, Noida, Delhi, and Panipat.
           </p>
           
           <div className="w-full max-w-2xl mt-8">
@@ -38,7 +54,7 @@ export default function HomePage() {
               <Search className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
               <div className="flex-1 text-left">
                 <p className="text-gray-300 font-medium text-lg">Search a location or project...</p>
-                <p className="text-gray-500 text-sm mt-1">e.g. Sector 65 Gurgaon, DLF Phase 5, Noida Extension</p>
+                <p className="text-gray-500 text-sm mt-1">e.g. Sector 65 Gurgaon, Model Town Panipat, Noida Extension</p>
               </div>
               <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-lg text-xs font-semibold text-gray-400">
                 <span>⌘</span>

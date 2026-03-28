@@ -19,10 +19,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${location.name} Livability & Safety Review | Expreality`,
     description: `Is ${location.name} a good place to live? Uncover verified insights on water supply, safety, transport, AQI and nearby projects.`,
+    alternates: {
+      canonical: `https://exprealty.in/locations/${location.slug}`,
+    },
     openGraph: {
-      title: `${location.name} Intelligence Report`,
+      title: `${location.name} Intelligence Report | Exprealty`,
       description: `Read verified, ground-reality insights for ${location.name}.`,
-    }
+      url: `https://exprealty.in/locations/${location.slug}`,
+      type: 'article',
+      images: [
+        {
+          url: 'https://exprealty.in/featured/og-image-default.jpg',
+          alt: `${location.name} location image`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${location.name} Intelligence Report | Exprealty`,
+      description: `Read verified, ground-reality insights for ${location.name}.`,
+      images: ['https://exprealty.in/featured/og-image-default.jpg'],
+      site: '@Exprealty',
+      creator: '@Exprealty',
+    },
   };
 }
 

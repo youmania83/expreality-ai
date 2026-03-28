@@ -19,10 +19,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${project.name} Review, Pros & Cons | Expreality`,
     description: `Read independent ground reality analysis for ${project.name}, including construction quality, amenities, water supply and resident sentiment.`,
+    alternates: {
+      canonical: `https://exprealty.in/projects/${project.slug}`,
+    },
     openGraph: {
-      title: `${project.name} Intelligence Report`,
+      title: `${project.name} Intelligence Report | Exprealty`,
       description: `Read verified, ground-reality insights for ${project.name}.`,
-    }
+      url: `https://exprealty.in/projects/${project.slug}`,
+      type: 'article',
+      images: [
+        {
+          url: 'https://exprealty.in/featured/og-image-default.jpg',
+          alt: `${project.name} project image`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.name} Intelligence Report | Exprealty`,
+      description: `Read verified, ground-reality insights for ${project.name}.`,
+      images: ['https://exprealty.in/featured/og-image-default.jpg'],
+      site: '@Exprealty',
+      creator: '@Exprealty',
+    },
   };
 }
 

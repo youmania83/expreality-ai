@@ -72,7 +72,7 @@ export const ResidenceCard: React.FC<ResidenceCardProps> = ({
               {name}
             </h3>
             <p className="mt-1 text-xs uppercase tracking-[0.2em] text-gray-500">
-              Luxury Residence • Delhi NCR
+              Luxury Residence • Delhi NCR / Panipat
             </p>
           </div>
           <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">

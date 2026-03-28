@@ -9,7 +9,7 @@ export default function PremiumFloatingCTA({ phoneNumber = "918368137724" }) {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   
-  const encodedMessage = encodeURIComponent("Hi, I’m interested in luxury properties in Delhi NCR. Please assist.");
+  const encodedMessage = encodeURIComponent("Hi, I’m interested in luxury properties in Delhi NCR and Panipat. Please assist.");
   const waHref = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   // Listen for hash changes to auto-open modal (used by Contact Page)
@@ -176,7 +176,7 @@ function LeadModal({ onClose, adminPhone }: { onClose: () => void, adminPhone: s
             </button>
           </div>
           <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-            Speak directly with our senior partners for curated property dossiers and exclusive walkthroughs in Delhi NCR.
+            Speak directly with our senior partners for curated property dossiers and exclusive walkthroughs in Delhi NCR and Panipat.
           </p>
         </div>
 

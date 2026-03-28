@@ -17,19 +17,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR',
-  description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
+  title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR & Panipat',
+  description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Panipat, Golf Course Road, and Delhi NCR.',
+  keywords: [
+    'real estate',
+    'Delhi NCR',
+    'Gurgaon',
+    'Panipat',
+    'Noida',
+    'luxury apartments',
+    'project analysis',
+    'livability score',
+    'property insights'
+  ],
   metadataBase: new URL('https://exprealty.in'),
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
-    title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR',
-    description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Golf Course Road, and Delhi NCR.',
+    title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR & Panipat',
+    description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Panipat, Golf Course Road, and Delhi NCR.',
     url: 'https://exprealty.in',
     siteName: 'Exprealty',
     locale: 'en_IN',
     type: 'website',
+    images: ['https://exprealty.in/featured/og-image-default.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Exprealty',
+    creator: '@Exprealty',
+    title: 'Exprealty | Ultra Luxury Homes & Apartments in Delhi NCR & Panipat',
+    description: 'Exprealty offers exclusive advisory for ultra luxury homes, RERA approved projects, and premium real estate across Gurgaon, Panipat, Golf Course Road, and Delhi NCR.',
+    images: ['https://exprealty.in/featured/og-image-default.jpg'],
   },
 };
 
@@ -41,6 +65,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://exprealty.in",
+              "name": "Exprealty",
+              "description": "Exprealty provides ground reality property intelligence for premium real estate in Delhi NCR and Panipat.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Exprealty",
+                "url": "https://exprealty.in"
+              }
+            }),
+          }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'}`}
           strategy="afterInteractive"

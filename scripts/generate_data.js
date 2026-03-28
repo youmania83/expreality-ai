@@ -172,6 +172,32 @@ const locations = [
     livability_score: 7.0, safety_score: 6.5, connectivity_score: 7.0,
     insights: { water: "Ground water reliant", safety: "Isolated during evening hours", transport: "Requires private vehicle", metro_distance: "8.0 km", aqi: "Severe", markets: "Local society shops", schools: "Modern Delhi Public School" },
     pros: ["Extremely cost-effective", "Large green belts surrounding"], cons: ["Poor road infrastructure", "Lack of social infrastructure"], faq: [{ question: "Are new bypass sectors in Faridabad good to live?", answer: "Only if you strictly budget-bound; daily civic issues persist." }]
+  },
+
+  // Panipat
+  {
+    name: "Model Town Panipat", slug: "model-town-panipat", city: "Panipat", coordinates: [29.390, 76.975],
+    livability_score: 8.5, safety_score: 8.5, connectivity_score: 8.0,
+    insights: { water: "Good municipal supply", safety: "Highly secure and established", transport: "Autos and e-rickshaws easily available", metro_distance: "N/A", aqi: "Poor", markets: "Model Town Market", schools: "MASD Public School" },
+    pros: ["Premium legacy living", "Excellent local markets and food"], cons: ["Traffic congestion", "Expensive real estate"], faq: [{ question: "Is Model Town Panipat a good place to live?", answer: "It is considered the most premium and established area in Panipat." }]
+  },
+  {
+    name: "TDI City Panipat", slug: "tdi-city-panipat", city: "Panipat", coordinates: [29.362, 76.995],
+    livability_score: 7.8, safety_score: 8.0, connectivity_score: 8.5,
+    insights: { water: "Adequate supply with RO reliance", safety: "Gated community security", transport: "Located on NH-44, great highway access", metro_distance: "N/A", aqi: "Poor", markets: "TDI Mall", schools: "TDI International School" },
+    pros: ["Great highway connectivity", "Modern township lifestyle"], cons: ["Away from the main city buzz", "Some maintenance issues reported"], faq: [{ question: "Is TDI City good for investment?", answer: "Good for modern living and those preferring highway access." }]
+  },
+  {
+    name: "Sector 11 Panipat", slug: "sector-11-panipat", city: "Panipat", coordinates: [29.381, 76.955],
+    livability_score: 8.0, safety_score: 8.0, connectivity_score: 7.5,
+    insights: { water: "Reliable HUDA supply", safety: "Peaceful residential sectors", transport: "Requires personal vehicle", metro_distance: "N/A", aqi: "Moderate", markets: "Sector 11 & 12 HUDA Markets", schools: "Bal Vikas School" },
+    pros: ["Planned HUDA sectors", "Green parks and open spaces"], cons: ["Older infrastructure in some parts"], faq: [{ question: "Are HUDA sectors in Panipat better than private builders?", answer: "Yes, for those who prefer planned open spaces and independent houses." }]
+  },
+  {
+    name: "Ansal Sushant City Panipat", slug: "ansal-sushant-city-panipat", city: "Panipat", coordinates: [29.410, 76.980],
+    livability_score: 7.5, safety_score: 7.5, connectivity_score: 8.0,
+    insights: { water: "Borewell/society supply", safety: "Gated blocks but large area", transport: "Near GT Road", metro_distance: "N/A", aqi: "Poor", markets: "Local society shops", schools: "DPS Panipat" },
+    pros: ["Large township with villas and plots", "Proximity to highway"], cons: ["Some sectors feel isolated", "Maintenance can be slow"], faq: [{ question: "Is Sushant City safe?", answer: "Generally safe, but it's vast and some pockets lack dense occupation." }]
   }
 ];
 
@@ -212,7 +238,11 @@ const projects = [
   { name: "Godrej Woods", slug: "godrej-woods", location_slug: "sector-150-noida", /* mapping to closest for now if 146 not defined, let's map to Sector 150 Noida */ price_range: "₹2.5Cr - ₹5Cr", segment: "luxury", insights: { construction_quality: "Premium", amenities: "Urban forest concept", water: "New infra", power_backup: "100%", maintenance: "Expected to be premium" }, pros: ["Unique forest theme", "Reputed builder"], cons: ["Still developing sector"], faq: [{ question: "Godrej Woods Noida review", answer: "Premium forest-theme living but carries a slight over-valuation." }] },
   
   // Faridabad
-  { name: "BPTP Park Grandeura", slug: "bptp-park-grandeura", location_slug: "neharpar", price_range: "₹80L - ₹1.4Cr", segment: "mid", insights: { construction_quality: "Average", amenities: "Good open areas", water: "Ground water reliant", power_backup: "Partial", maintenance: "Patchy" }, pros: ["Affordable mid-segment", "Large layout"], cons: ["BPTP legacy issues with maintenance", "Civic infra outside society is poor"], faq: [{ question: "Is BPTP Grandeura good?", answer: "It presents good value for money but requires compromising on external road quality." }] }
+  { name: "BPTP Park Grandeura", slug: "bptp-park-grandeura", location_slug: "neharpar", price_range: "₹80L - ₹1.4Cr", segment: "mid", insights: { construction_quality: "Average", amenities: "Good open areas", water: "Ground water reliant", power_backup: "Partial", maintenance: "Patchy" }, pros: ["Affordable mid-segment", "Large layout"], cons: ["BPTP legacy issues with maintenance", "Civic infra outside society is poor"], faq: [{ question: "Is BPTP Grandeura good?", answer: "It presents good value for money but requires compromising on external road quality." }] },
+
+  // Panipat
+  { name: "TDI Tuscan City", slug: "tdi-tuscan-city-panipat", location_slug: "tdi-city-panipat", price_range: "₹80L - ₹1.5Cr", segment: "premium", insights: { construction_quality: "Modern", amenities: "Clubhouse and parks", water: "TDI supply", power_backup: "Available", maintenance: "Average" }, pros: ["Integrated township living", "Highway proximity"], cons: ["Maintenance disputes at times"], faq: [{ question: "TDI Tuscan Panipat review?", answer: "A popular choice for premium township living in Panipat." }] },
+  { name: "Ansal API Sushant City Villas", slug: "ansal-sushant-city-villas", location_slug: "ansal-sushant-city-panipat", price_range: "₹1.5Cr - ₹3Cr", segment: "luxury", insights: { construction_quality: "Variable as many are independent builder floors/villas", amenities: "Township parks", water: "Society supply", power_backup: "Inverter reliant", maintenance: "RWA dependent" }, pros: ["Spacious independent living", "Green environment"], cons: ["Disparate construction styles"], faq: [{ question: "Buy villa in Sushant City Panipat?", answer: "Ensure a thorough structural check before buying as many are independently built." }] }
 ];
 
 

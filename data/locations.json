@@ -776,5 +776,144 @@
         "answer": "Only if you strictly budget-bound; daily civic issues persist."
       }
     ]
+  },
+  {
+    "name": "Model Town Panipat",
+    "slug": "model-town-panipat",
+    "city": "Panipat",
+    "coordinates": [
+      29.39,
+      76.975
+    ],
+    "livability_score": 8.5,
+    "safety_score": 8.5,
+    "connectivity_score": 8,
+    "insights": {
+      "water": "Good municipal supply",
+      "safety": "Highly secure and established",
+      "transport": "Autos and e-rickshaws easily available",
+      "metro_distance": "N/A",
+      "aqi": "Poor",
+      "markets": "Model Town Market",
+      "schools": "MASD Public School"
+    },
+    "pros": [
+      "Premium legacy living",
+      "Excellent local markets and food"
+    ],
+    "cons": [
+      "Traffic congestion",
+      "Expensive real estate"
+    ],
+    "faq": [
+      {
+        "question": "Is Model Town Panipat a good place to live?",
+        "answer": "It is considered the most premium and established area in Panipat."
+      }
+    ]
+  },
+  {
+    "name": "TDI City Panipat",
+    "slug": "tdi-city-panipat",
+    "city": "Panipat",
+    "coordinates": [
+      29.362,
+      76.995
+    ],
+    "livability_score": 7.8,
+    "safety_score": 8,
+    "connectivity_score": 8.5,
+    "insights": {
+      "water": "Adequate supply with RO reliance",
+      "safety": "Gated community security",
+      "transport": "Located on NH-44, great highway access",
+      "metro_distance": "N/A",
+      "aqi": "Poor",
+      "markets": "TDI Mall",
+      "schools": "TDI International School"
+    },
+    "pros": [
+      "Great highway connectivity",
+      "Modern township lifestyle"
+    ],
+    "cons": [
+      "Away from the main city buzz",
+      "Some maintenance issues reported"
+    ],
+    "faq": [
+      {
+        "question": "Is TDI City good for investment?",
+        "answer": "Good for modern living and those preferring highway access."
+      }
+    ]
+  },
+  {
+    "name": "Sector 11 Panipat",
+    "slug": "sector-11-panipat",
+    "city": "Panipat",
+    "coordinates": [
+      29.381,
+      76.955
+    ],
+    "livability_score": 8,
+    "safety_score": 8,
+    "connectivity_score": 7.5,
+    "insights": {
+      "water": "Reliable HUDA supply",
+      "safety": "Peaceful residential sectors",
+      "transport": "Requires personal vehicle",
+      "metro_distance": "N/A",
+      "aqi": "Moderate",
+      "markets": "Sector 11 & 12 HUDA Markets",
+      "schools": "Bal Vikas School"
+    },
+    "pros": [
+      "Planned HUDA sectors",
+      "Green parks and open spaces"
+    ],
+    "cons": [
+      "Older infrastructure in some parts"
+    ],
+    "faq": [
+      {
+        "question": "Are HUDA sectors in Panipat better than private builders?",
+        "answer": "Yes, for those who prefer planned open spaces and independent houses."
+      }
+    ]
+  },
+  {
+    "name": "Ansal Sushant City Panipat",
+    "slug": "ansal-sushant-city-panipat",
+    "city": "Panipat",
+    "coordinates": [
+      29.41,
+      76.98
+    ],
+    "livability_score": 7.5,
+    "safety_score": 7.5,
+    "connectivity_score": 8,
+    "insights": {
+      "water": "Borewell/society supply",
+      "safety": "Gated blocks but large area",
+      "transport": "Near GT Road",
+      "metro_distance": "N/A",
+      "aqi": "Poor",
+      "markets": "Local society shops",
+      "schools": "DPS Panipat"
+    },
+    "pros": [
+      "Large township with villas and plots",
+      "Proximity to highway"
+    ],
+    "cons": [
+      "Some sectors feel isolated",
+      "Maintenance can be slow"
+    ],
+    "faq": [
+      {
+        "question": "Is Sushant City safe?",
+        "answer": "Generally safe, but it's vast and some pockets lack dense occupation."
+      }
+    ]
   }
 ]

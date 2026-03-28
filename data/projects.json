@@ -435,5 +435,59 @@
         "answer": "It presents good value for money but requires compromising on external road quality."
       }
     ]
+  },
+  {
+    "name": "TDI Tuscan City",
+    "slug": "tdi-tuscan-city-panipat",
+    "location_slug": "tdi-city-panipat",
+    "price_range": "₹80L - ₹1.5Cr",
+    "segment": "premium",
+    "insights": {
+      "construction_quality": "Modern",
+      "amenities": "Clubhouse and parks",
+      "water": "TDI supply",
+      "power_backup": "Available",
+      "maintenance": "Average"
+    },
+    "pros": [
+      "Integrated township living",
+      "Highway proximity"
+    ],
+    "cons": [
+      "Maintenance disputes at times"
+    ],
+    "faq": [
+      {
+        "question": "TDI Tuscan Panipat review?",
+        "answer": "A popular choice for premium township living in Panipat."
+      }
+    ]
+  },
+  {
+    "name": "Ansal API Sushant City Villas",
+    "slug": "ansal-sushant-city-villas",
+    "location_slug": "ansal-sushant-city-panipat",
+    "price_range": "₹1.5Cr - ₹3Cr",
+    "segment": "luxury",
+    "insights": {
+      "construction_quality": "Variable as many are independent builder floors/villas",
+      "amenities": "Township parks",
+      "water": "Society supply",
+      "power_backup": "Inverter reliant",
+      "maintenance": "RWA dependent"
+    },
+    "pros": [
+      "Spacious independent living",
+      "Green environment"
+    ],
+    "cons": [
+      "Disparate construction styles"
+    ],
+    "faq": [
+      {
+        "question": "Buy villa in Sushant City Panipat?",
+        "answer": "Ensure a thorough structural check before buying as many are independently built."
+      }
+    ]
   }
 ]

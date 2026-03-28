@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
               Exprealty
             </p>
             <p className="mt-2 text-sm text-gray-400 max-w-sm">
-              Luxury real estate intelligence for Delhi NCR&apos;s discerning
+              Luxury real estate intelligence for Delhi NCR and Panipat&apos;s discerning
               buyers, with a focus on curated corridors and private deal flow.
             </p>
             <p className="mt-3 text-xs text-gray-500">
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               >
                 advisory@expreality.ai
               </a>{" "}
-              · Delhi NCR
+              · Delhi NCR & Panipat
             </p>
           </div>
           <div className="flex flex-wrap gap-4 text-xs text-gray-400">
