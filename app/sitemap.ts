@@ -8,6 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/search',
+    '/rera-approved-projects-gurgaon',
+    '/luxury-apartments-golf-course-road',
+    '/investment-properties-dubai',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
